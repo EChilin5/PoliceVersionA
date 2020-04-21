@@ -77,10 +77,6 @@ public class PoliceDB extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         AssignmentPK = new javax.swing.JTextField();
         CompleteUpdate = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        MakeCallName = new javax.swing.JTextField();
-        MakeCallDescritpion = new javax.swing.JTextField();
-        SubmitCall = new javax.swing.JToggleButton();
         jPanel2 = new javax.swing.JPanel();
         Description = new javax.swing.JTextField();
         CallerName = new javax.swing.JTextField();
@@ -95,6 +91,7 @@ public class PoliceDB extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         callNumberText = new javax.swing.JTextField();
         CallerIDsave = new javax.swing.JTextField();
+        AddOperator = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
@@ -103,6 +100,10 @@ public class PoliceDB extends javax.swing.JFrame {
         IncidentNameDP = new javax.swing.JTextField();
         IncidentNumberDP = new javax.swing.JTextField();
         StartAssigning = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        MakeCallName = new javax.swing.JTextField();
+        MakeCallDescritpion = new javax.swing.JTextField();
+        SubmitCall = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(800, 800));
@@ -194,13 +195,13 @@ public class PoliceDB extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(76, Short.MAX_VALUE)
+                .addContainerGap(80, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton1)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26))
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(80, 80, 80)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
@@ -210,14 +211,13 @@ public class PoliceDB extends javax.swing.JFrame {
                     .addComponent(EditStatus)
                     .addComponent(SearchButton, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                     .addComponent(FinalAssignment))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
                         .addComponent(jButton4)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton5))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(UpdateBadgeStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
                             .addComponent(FinalIncidentNumber))
@@ -299,7 +299,7 @@ public class PoliceDB extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(346, 346, 346)
                         .addComponent(AssignmentPK, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                         .addComponent(CompleteUpdate))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -319,49 +319,6 @@ public class PoliceDB extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Complete", jPanel1);
-
-        MakeCallName.setText("Name");
-        MakeCallName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MakeCallNameActionPerformed(evt);
-            }
-        });
-
-        MakeCallDescritpion.setText("Descritpion");
-
-        SubmitCall.setText("Submit");
-        SubmitCall.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SubmitCallActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(SubmitCall)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(MakeCallName)
-                        .addComponent(MakeCallDescritpion, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)))
-                .addContainerGap(427, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(MakeCallName, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(MakeCallDescritpion, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(SubmitCall)
-                .addGap(10, 10, 10))
-        );
-
-        jTabbedPane1.addTab("Make Call", jPanel4);
 
         Description.setText("Description");
         Description.addActionListener(new java.awt.event.ActionListener() {
@@ -437,6 +394,13 @@ public class PoliceDB extends javax.swing.JFrame {
 
         CallerIDsave.setText("Caller ID");
 
+        AddOperator.setText("Add Operator");
+        AddOperator.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddOperatorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -444,14 +408,17 @@ public class PoliceDB extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CallerName, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                    .addComponent(Location, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                    .addComponent(Description, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                    .addComponent(PoliceCode, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                    .addComponent(SendReport)
+                    .addComponent(CallerName)
+                    .addComponent(Location)
+                    .addComponent(Description)
+                    .addComponent(PoliceCode)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(SendReport)
+                        .addGap(18, 18, 18)
+                        .addComponent(AddOperator))
                     .addComponent(Priority)
                     .addComponent(CallerIDsave)
-                    .addComponent(IncidentType))
+                    .addComponent(IncidentType, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -493,7 +460,9 @@ public class PoliceDB extends javax.swing.JFrame {
                         .addGap(16, 16, 16)
                         .addComponent(Priority, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(SendReport)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SendReport)
+                            .addComponent(AddOperator))
                         .addGap(38, 38, 38)))
                 .addGap(10, 10, 10))
         );
@@ -554,7 +523,7 @@ public class PoliceDB extends javax.swing.JFrame {
                         .addComponent(IncidentNameDP)
                         .addComponent(IncidentNumberDP, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE))
                     .addComponent(StartAssigning))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(ReportSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -586,6 +555,48 @@ public class PoliceDB extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Dispatcher", jPanel6);
+
+        MakeCallName.setText("Name");
+        MakeCallName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MakeCallNameActionPerformed(evt);
+            }
+        });
+
+        MakeCallDescritpion.setText("Descritpion");
+
+        SubmitCall.setText("Submit");
+        SubmitCall.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitCallActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(443, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(SubmitCall)
+                    .addComponent(MakeCallDescritpion, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MakeCallName, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(66, 66, 66))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(MakeCallName, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(MakeCallDescritpion, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(SubmitCall)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Make Call", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -783,6 +794,7 @@ public class PoliceDB extends javax.swing.JFrame {
         String Number = IncidentNumberDP.getText();
         
         FinalAssignment.setText(name);
+        FinalIncidentNumber.setText(Number);
     }//GEN-LAST:event_StartAssigningActionPerformed
 
     private void CompleteAssignmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompleteAssignmentActionPerformed
@@ -815,6 +827,10 @@ public class PoliceDB extends javax.swing.JFrame {
     private void UpdateBadgeStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBadgeStatusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UpdateBadgeStatusActionPerformed
+
+    private void AddOperatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddOperatorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddOperatorActionPerformed
 
     private void Insert(){
         
@@ -942,6 +958,7 @@ public class PoliceDB extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddOperator;
     private javax.swing.JTextField AssignmentPK;
     private javax.swing.JTextField CallerIDsave;
     private javax.swing.JTextField CallerName;
