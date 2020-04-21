@@ -301,7 +301,7 @@ public class InsertSQL {
         }
     }
     
-    public static void ResponderAssignment(int responder, String assignment) {
+    public static void ResponderAssignment(int responder, String assignment, int IncidentNumber) {
 
         try {
             System.out.println("wait Insert");
@@ -313,11 +313,14 @@ public class InsertSQL {
             Class.forName(driver);
 
             Connection conn = DriverManager.getConnection(url, username, password);
-            String sql = "Insert Into ResponderAssignment (ResponderNumber, Assignment)"
-                    + " VALUES (?,?);";
+            String sql = "Insert Into ResponderAssignment (ResponderNumber, Assignment, Complete, IncidentReportID)"
+                    + " VALUES (?,?, ?,?);";
             PreparedStatement preparedStatement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, responder);
             preparedStatement.setString(2, assignment);
+            preparedStatement.setBoolean(3, false);
+            preparedStatement.setInt(4, IncidentNumber);
+
     
 
             preparedStatement.executeUpdate();

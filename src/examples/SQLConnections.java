@@ -131,6 +131,8 @@ public class SQLConnections {
             String sql = "Select Responder.Name AS NAME,"
                     + " Responder.ResponderNumber as BadgeNumber,"
                     + "ResponderAssignment.Assignment as Assignment,"
+                    + "ResponderAssignment.Complete as Complete,"
+                    + "ResponderAssignment.IncidentReportID as IncidentReportID, "
                     + " ResponderAssignment.AssignmentID as ID "
                     + "From Responder "
                     + "Inner Join ResponderAssignment"
@@ -144,9 +146,13 @@ public class SQLConnections {
                 String assignment = rs.getString("Assignment");;
 
                 int badgeNumber = rs.getInt("BadgeNumber");;
-                int assignmentNumber = rs.getInt("ID");;
+                int assignmentNumber = rs.getInt("ID");
+                boolean complete = rs.getBoolean("Complete");
+                int IncidentReportID = rs.getInt("IncidentReportID");
 
-                OfficerAssignment officersInfo = new OfficerAssignment(name, badgeNumber, assignment, assignmentNumber);
+
+                OfficerAssignment officersInfo = new OfficerAssignment(name, badgeNumber, assignment, 
+                        assignmentNumber, complete, IncidentReportID);
                 officerAssignmentList.add(officersInfo);
             }
 

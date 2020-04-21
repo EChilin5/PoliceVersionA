@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,7 +23,6 @@ public class PoliceDB extends javax.swing.JFrame {
 
     public Object[] ob;
     private int row;
-    private String[][] OfficerInfoCopy = new String[row][6];
 
     /**
      * Creates new form PoliceDB
@@ -38,7 +38,7 @@ public class PoliceDB extends javax.swing.JFrame {
             SQLConnections.IncidentReportInfo();
             TableUpdate();
             TableUpdate2();
-            
+            updateIncidentReport();
             CallerTable();
         } catch (Exception ex) {
             Logger.getLogger(PoliceDB.class.getName()).log(Level.SEVERE, null, ex);
@@ -63,9 +63,20 @@ public class PoliceDB extends javax.swing.JFrame {
         SearchButton = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        FinalAssignment = new javax.swing.JTextField();
+        FinalBadgeNumber = new javax.swing.JTextField();
+        CompleteAssignment = new javax.swing.JButton();
+        FinalIncidentNumber = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        EditStatus = new javax.swing.JTextField();
+        UpdateBadgeStatus = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        UpdateStaus = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        AssignmentPK = new javax.swing.JTextField();
+        CompleteUpdate = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         MakeCallName = new javax.swing.JTextField();
         MakeCallDescritpion = new javax.swing.JTextField();
@@ -87,12 +98,11 @@ public class PoliceDB extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        ReportSearch = new javax.swing.JTextField();
+        GetReport = new javax.swing.JButton();
+        IncidentNameDP = new javax.swing.JTextField();
+        IncidentNumberDP = new javax.swing.JTextField();
+        StartAssigning = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(800, 800));
@@ -141,32 +151,93 @@ public class PoliceDB extends javax.swing.JFrame {
             }
         });
 
+        FinalAssignment.setText("Assignment");
+
+        FinalBadgeNumber.setText("Badge Number");
+
+        CompleteAssignment.setText("Assign");
+        CompleteAssignment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CompleteAssignmentActionPerformed(evt);
+            }
+        });
+
+        FinalIncidentNumber.setText("Incident #");
+
+        jButton1.setText("Add new Officer");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        EditStatus.setText("Staus");
+
+        UpdateBadgeStatus.setText("Badge Number");
+        UpdateBadgeStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateBadgeStatusActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Officer Status Update");
+
+        UpdateStaus.setText("Update Status");
+        UpdateStaus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateStausActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(76, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addGap(15, 15, 15)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(EditStatus)
+                    .addComponent(SearchButton, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                    .addComponent(FinalAssignment))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(83, 83, 83)
-                        .addComponent(SearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43)
                         .addComponent(jButton4)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5)))
+                        .addComponent(jButton5))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(UpdateBadgeStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                            .addComponent(FinalIncidentNumber))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(FinalBadgeNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(CompleteAssignment))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(UpdateStaus)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addGap(1, 1, 1)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -174,9 +245,20 @@ public class PoliceDB extends javax.swing.JFrame {
                     .addComponent(SearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4)
                     .addComponent(jButton5))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EditStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UpdateBadgeStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(UpdateStaus))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(FinalAssignment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FinalBadgeNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CompleteAssignment)
+                    .addComponent(FinalIncidentNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(4906, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Officer Info", jPanel3);
@@ -186,11 +268,11 @@ public class PoliceDB extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Name", "Number"
+                "Assignment", "Assignment Number", "Incident Report", "Status", "Incident Report"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true
+                false, true, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -199,24 +281,44 @@ public class PoliceDB extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable1);
 
+        AssignmentPK.setText("Assignment #");
+
+        CompleteUpdate.setText("Complete");
+        CompleteUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CompleteUpdateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(218, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(346, 346, 346)
+                        .addComponent(AssignmentPK, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                        .addComponent(CompleteUpdate))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(89, 89, 89))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(128, 128, 128)
+                .addGap(49, 49, 49)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10))
+                .addGap(41, 41, 41)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AssignmentPK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CompleteUpdate))
+                .addContainerGap(4884, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab1", jPanel1);
+        jTabbedPane1.addTab("Complete", jPanel1);
 
         MakeCallName.setText("Name");
         MakeCallName.addActionListener(new java.awt.event.ActionListener() {
@@ -245,7 +347,7 @@ public class PoliceDB extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(MakeCallName)
                         .addComponent(MakeCallDescritpion, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)))
-                .addContainerGap(423, Short.MAX_VALUE))
+                .addContainerGap(427, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -406,27 +508,40 @@ public class PoliceDB extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Incident #", "Priority", "Type", "Title 4"
+                "Incident #", "Priority", "Type", "Location"
             }
         ));
         jScrollPane4.setViewportView(jTable4);
 
-        jTextField1.setText("jTextField1");
-
-        jButton1.setText("Get Report");
-
-        jTextField2.setText("Incident Name");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        ReportSearch.setText("jTextField1");
+        ReportSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                ReportSearchActionPerformed(evt);
             }
         });
 
-        jTextField3.setText("Incident Number");
+        GetReport.setText("Get Report");
+        GetReport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GetReportActionPerformed(evt);
+            }
+        });
 
-        jTextField4.setText("jTextField4");
+        IncidentNameDP.setText("Incident Name");
+        IncidentNameDP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IncidentNameDPActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("jButton2");
+        IncidentNumberDP.setText("Incident Number");
+
+        StartAssigning.setText("Start Assigning Task");
+        StartAssigning.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartAssigningActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -436,16 +551,15 @@ public class PoliceDB extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField2)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
-                        .addComponent(jTextField4))
-                    .addComponent(jButton2))
+                        .addComponent(IncidentNameDP)
+                        .addComponent(IncidentNumberDP, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE))
+                    .addComponent(StartAssigning))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ReportSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(GetReport, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(55, 55, 55))
         );
@@ -455,21 +569,19 @@ public class PoliceDB extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(jButton1))
+                        .addComponent(GetReport))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ReportSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(IncidentNameDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)))
+                        .addComponent(IncidentNumberDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(StartAssigning)))
                 .addContainerGap(4796, Short.MAX_VALUE))
         );
 
@@ -578,6 +690,30 @@ public class PoliceDB extends javax.swing.JFrame {
         }
 
     }
+    
+    private void GetReportInfo(int i){
+          JFrame frame = new JFrame("Test Frame");
+        frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        JLabel label = new JLabel("My label");
+         label.setText("Caller Name : "+SQLConnections.incidentList.get(i).getName()+ "\n"
+                    +"Description: \n"+SQLConnections.incidentList.get(i).getDescription());
+         label.setLocation(100, 50);
+         JLabel label2 = new JLabel("My label");
+         label2.setText("Caller Name : "+SQLConnections.incidentList.get(i).getName()+ "\n"
+                    +"Description: \n"+SQLConnections.incidentList.get(i).getDescription());
+       label2.setLocation(10, 60);
+       JPanel p = new JPanel();
+         frame.add(label);
+         frame.add(label2);
+         //p.setSize(new Dimension( 500, 200 ));
+         // frame.add(p);
+        //frame.add(label);
+        //frame.add(label2);
+        frame.setSize( new Dimension( 500, 200 ));
+
+        frame.setVisible(true);
+    }
+    
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         TableUpdate2();
@@ -612,9 +748,73 @@ public class PoliceDB extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PoliceCodeActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void IncidentNameDPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IncidentNameDPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_IncidentNameDPActionPerformed
+
+    private void ReportSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ReportSearchActionPerformed
+
+    private void GetReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GetReportActionPerformed
+         String number = ReportSearch.getText().trim();
+        
+        DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
+        // model.getDataVector().removeAllElements();
+        model.setRowCount(0);
+
+        for (int i = 0; i < SQLConnections.incidentList.size(); i++) {
+            //String name = SQLConnections.users.get(i).getName();
+             int incidentNumber = SQLConnections.incidentList.get(i).getIncidentReport();
+            if(Integer.parseInt(number) ==incidentNumber ){
+          GetReportInfo(i);
+            int priority = SQLConnections.incidentList.get(i).getPriorityType();
+            String type = SQLConnections.incidentList.get(i).getIncidentType();
+            String Location = SQLConnections.incidentList.get(i).getLocation();
+           
+            Object[] Arow = {Integer.toString(incidentNumber), Integer.toString(priority), type, Location};
+            model.addRow(Arow);
+            }
+        }
+    }//GEN-LAST:event_GetReportActionPerformed
+
+    private void StartAssigningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartAssigningActionPerformed
+        String name  = IncidentNameDP.getText();
+        String Number = IncidentNumberDP.getText();
+        
+        FinalAssignment.setText(name);
+    }//GEN-LAST:event_StartAssigningActionPerformed
+
+    private void CompleteAssignmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompleteAssignmentActionPerformed
+             int incidentNumber = Integer.parseInt(FinalIncidentNumber.getText().trim());
+        int responder = Integer.parseInt(FinalBadgeNumber.getText().trim());
+        String Assignment = FinalAssignment.getText();
+        InsertSQL.ResponderAssignment( responder,  Assignment, incidentNumber);
+        System.out.println("Complete");
+
+    }//GEN-LAST:event_CompleteAssignmentActionPerformed
+
+    private void CompleteUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompleteUpdateActionPerformed
+       
+        int assignment =Integer.parseInt(AssignmentPK.getText().trim());
+       
+        UpdateSQL.ResponderAssignment( assignment);
+
+    }//GEN-LAST:event_CompleteUpdateActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void UpdateStausActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateStausActionPerformed
+        String updateStatus =EditStatus.getText();
+        int badge = Integer.parseInt(UpdateBadgeStatus.getText().trim());
+        UpdateSQL.ResponderStatus(badge, updateStatus);
+    }//GEN-LAST:event_UpdateStausActionPerformed
+
+    private void UpdateBadgeStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBadgeStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UpdateBadgeStatusActionPerformed
 
     private void Insert(){
         
@@ -665,10 +865,19 @@ public class PoliceDB extends javax.swing.JFrame {
     public void TableUpdate() {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
-        for (int i = 0; i < SQLConnections.users.size(); i++) {
-            String name = SQLConnections.users.get(i).getName();
+        for (int i = 0; i < SQLConnections.officerAssignmentList.size(); i++) {
+            String Done = "No";
+            String name = SQLConnections.officerAssignmentList.get(i).getName();
+            int number  = SQLConnections.officerAssignmentList.get(i).getAssignmentNumber();
+            int badge = SQLConnections.officerAssignmentList.get(i).getBadgeNumber();
+            boolean Complete = SQLConnections.officerAssignmentList.get(i).getComplete();
+            int incidentNumber = SQLConnections.officerAssignmentList.get(i).getIncidentReportID();
 
-            Object[] tablerow = {name, Integer.toString(i)};
+            if(Complete){
+                Done= "Yes";
+            }
+            Object[] tablerow = {name, Integer.toString(number),  Integer.toString(incidentNumber), 
+                Integer.toString(badge), Done};
             model.addRow(tablerow);
         }
     }
@@ -693,6 +902,23 @@ public class PoliceDB extends javax.swing.JFrame {
         }
     }
 
+    public void updateIncidentReport(){
+          DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
+        // model.getDataVector().removeAllElements();
+        model.setRowCount(0);
+
+        for (int i = 0; i < SQLConnections.incidentList.size(); i++) {
+            //String name = SQLConnections.users.get(i).getName();
+            int incidentNumber = SQLConnections.incidentList.get(i).getIncidentReport();
+            int priority = SQLConnections.incidentList.get(i).getPriorityType();
+            String type = SQLConnections.incidentList.get(i).getIncidentType();
+            String Location = SQLConnections.incidentList.get(i).getLocation();
+           
+            Object[] Arow = {Integer.toString(incidentNumber), Integer.toString(priority), type, Location};
+            model.addRow(Arow);
+        }
+    }
+    
     public void CallerTable() {
         DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
         // model.getDataVector().removeAllElements();
@@ -716,26 +942,40 @@ public class PoliceDB extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AssignmentPK;
     private javax.swing.JTextField CallerIDsave;
     private javax.swing.JTextField CallerName;
+    private javax.swing.JButton CompleteAssignment;
+    private javax.swing.JButton CompleteUpdate;
     private javax.swing.JTextField Description;
+    private javax.swing.JTextField EditStatus;
+    private javax.swing.JTextField FinalAssignment;
+    private javax.swing.JTextField FinalBadgeNumber;
+    private javax.swing.JTextField FinalIncidentNumber;
     private javax.swing.JButton GetCall;
+    private javax.swing.JButton GetReport;
+    private javax.swing.JTextField IncidentNameDP;
+    private javax.swing.JTextField IncidentNumberDP;
     private javax.swing.JTextField IncidentType;
     private javax.swing.JTextField Location;
     private javax.swing.JTextField MakeCallDescritpion;
     private javax.swing.JTextField MakeCallName;
     private javax.swing.JTextField PoliceCode;
     private javax.swing.JTextField Priority;
+    private javax.swing.JTextField ReportSearch;
     private javax.swing.JTextField SearchButton;
     private javax.swing.JButton SendReport;
+    private javax.swing.JButton StartAssigning;
     private javax.swing.JToggleButton SubmitCall;
+    private javax.swing.JTextField UpdateBadgeStatus;
+    private javax.swing.JButton UpdateStaus;
     private javax.swing.JTextField callNumberText;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -751,9 +991,5 @@ public class PoliceDB extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }

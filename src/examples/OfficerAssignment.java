@@ -13,12 +13,17 @@ public class OfficerAssignment {
       private String name;
     private int BadgeNumber;
     private String Assignment;
+    private boolean Complete; 
+    private int IncidentReportID;
 
-    public OfficerAssignment(String name, int badgeNumber, String assignment, int assignmentNumber) {
+    public OfficerAssignment(String name, int badgeNumber, String assignment, int assignmentNumber, 
+            boolean Complete, int IncidentReportID) {
         this.name = name;
         BadgeNumber = badgeNumber;
         Assignment = assignment;
         AssignmentNumber = assignmentNumber;
+        this.Complete = Complete;
+        this.IncidentReportID = IncidentReportID;
     }
 
     private int AssignmentNumber;
@@ -53,5 +58,21 @@ public class OfficerAssignment {
 
     public void setAssignmentNumber(int assignmentNumber) {
         AssignmentNumber = assignmentNumber;
+    }
+    
+     public boolean getComplete() {
+        return Complete;
+    }
+
+    public void isComplete(boolean complete) {
+        Complete = complete;
+    }
+    
+     public int getIncidentReportID() {
+        return IncidentReportID;
+    }
+
+    public void setIncidentReportID(int incidentReportID) {
+        IncidentReportID = incidentReportID;
     }
 }
