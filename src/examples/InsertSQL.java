@@ -9,22 +9,85 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Date;  
+import java.util.Date;
 
 /**
  *
  * @author edgarchilin
  */
 public class InsertSQL {
+
     public static int InsertCallPk;
     public static int ResponderPK;
-        public static int IncidentReportPK;
-                public static int DispatcherPK;
+    public static int IncidentReportPK;
+    public static int DispatcherPK;
 
-
-    
-    public static int getIncidentReportPK(){
+    public static int getIncidentReportPK() {
         return IncidentReportPK;
+    }
+
+     public static void OperatorTable(String name) {
+
+        try {
+            System.out.println("wait Insert");
+            ResultSet rs = null;
+            String driver = "com.mysql.jdbc.Driver";
+            String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_c511b6e038c9438";
+            String username = "b57fbaa3a5275d";
+            String password = "fbe8c1ca";
+            Class.forName(driver);
+
+            Connection conn = DriverManager.getConnection(url, username, password);
+            String sql = "Insert Into Operator (operatorName)"
+                    + " VALUES (?);";
+            PreparedStatement preparedStatement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1, name);
+           
+            preparedStatement.executeUpdate();
+            rs = preparedStatement.getGeneratedKeys();
+            if (rs != null && rs.next()) {
+               // System.out.println("Generated Emp Id: " + rs.getInt(1));
+               // ResponderPK = rs.getInt(1);
+            }
+
+            System.out.println("Completed Insert");
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+        public static void AlarmTable(String name,String Type, String Location) {
+        try {
+            System.out.println("wait Insert");
+            ResultSet rs = null;
+            String driver = "com.mysql.jdbc.Driver";
+            String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_c511b6e038c9438";
+            String username = "b57fbaa3a5275d";
+            String password = "fbe8c1ca";
+            Class.forName(driver);
+
+            Connection conn = DriverManager.getConnection(url, username, password);
+            String sql = "Insert Into Alarm (AlarmName, AlarmType, AlarmLocation)"
+                    + " VALUES (?,?,?);";
+            PreparedStatement preparedStatement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1, name);
+            preparedStatement.setString(2, Type);
+            preparedStatement.setString(3, Location);
+
+           
+            preparedStatement.executeUpdate();
+            rs = preparedStatement.getGeneratedKeys();
+            if (rs != null && rs.next()) {
+               // System.out.println("Generated Emp Id: " + rs.getInt(1));
+               // ResponderPK = rs.getInt(1);
+            }
+
+            System.out.println("Completed Insert");
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
     
     
@@ -60,8 +123,8 @@ public class InsertSQL {
             System.out.println(e);
         }
     }
-    
-    public static void Priority(String PriorityType,  int IncidentReportID) {
+
+    public static void Priority(String PriorityType, int IncidentReportID) {
         try {
             System.out.println("wait Insert");
             ResultSet rs = null;
@@ -75,10 +138,10 @@ public class InsertSQL {
             String sql = "INSERT INTO Priority (PriorityType, PriorityTime, IncidentReportID)"
                     + " VALUES (?,?,?);";
             PreparedStatement preparedStatement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");  
-             Date date = new Date();  
-             System.out.println(formatter.format(date));
-             String record = date.toString();
+            SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
+            Date date = new Date();
+            System.out.println(formatter.format(date));
+            String record = date.toString();
             preparedStatement.setString(1, PriorityType);
             preparedStatement.setString(2, record);
             preparedStatement.setInt(3, IncidentReportID);
@@ -96,7 +159,8 @@ public class InsertSQL {
             System.out.println(e);
         }
     }
-       public static void ReicieveCallIncidentReport(int RecieveCallID, int IncidentReportID) {
+
+    public static void ReicieveCallIncidentReport(int RecieveCallID, int IncidentReportID) {
 
         try {
             System.out.println("wait Insert");
@@ -116,8 +180,8 @@ public class InsertSQL {
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {
-              //  System.out.println("Generated Emp Id: " + rs.getInt(1));
-              //  InsertCallPk = rs.getInt(1);
+                //  System.out.println("Generated Emp Id: " + rs.getInt(1));
+                //  InsertCallPk = rs.getInt(1);
             }
 
             System.out.println("Completed Insert");
@@ -126,9 +190,9 @@ public class InsertSQL {
             System.out.println(e);
         }
     }
-    
-     public static void IncidentReport(String IncidentType, String Name, String Location, 
-             String Description, int PoliceCode) {
+
+    public static void IncidentReport(String IncidentType, String Name, String Location,
+            String Description, int PoliceCode) {
 
         try {
             System.out.println("wait Insert for report");
@@ -145,13 +209,13 @@ public class InsertSQL {
             PreparedStatement preparedStatement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, IncidentType);
             preparedStatement.setString(2, Name);
-             preparedStatement.setString(3, Location);
+            preparedStatement.setString(3, Location);
             preparedStatement.setString(4, Description);
             preparedStatement.setInt(5, PoliceCode);
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {
-              //  System.out.println("Generated Emp Id: " + rs.getInt(1));
+                //  System.out.println("Generated Emp Id: " + rs.getInt(1));
                 IncidentReportPK = rs.getInt(1);
             }
 
@@ -159,12 +223,12 @@ public class InsertSQL {
 
         } catch (Exception e) {
             System.out.println(e);
-                        System.out.println("report Insert failed ");
+            System.out.println("report Insert failed ");
 
         }
     }
-    
-      public static void Dispatcher(String name, String branch) {
+
+    public static void Dispatcher(String name, String branch) {
 
         try {
             System.out.println("wait Insert");
@@ -184,7 +248,7 @@ public class InsertSQL {
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {
-              //  System.out.println("Generated Emp Id: " + rs.getInt(1));
+                //  System.out.println("Generated Emp Id: " + rs.getInt(1));
                 DispatcherPK = rs.getInt(1);
             }
 
@@ -194,8 +258,8 @@ public class InsertSQL {
             System.out.println(e);
         }
     }
-    
-     public static void OtherAgency(String AgencyBracnch, int IncidentID, int DispatcherId, String Description) {
+
+    public static void OtherAgency(String AgencyBracnch, int IncidentID, int DispatcherId, String Description) {
         try {
             System.out.println("wait Insert");
             ResultSet rs = null;
@@ -217,8 +281,8 @@ public class InsertSQL {
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {
-              //  System.out.println("Generated Emp Id: " + rs.getInt(1));
-              //  InsertCallPk = rs.getInt(1);
+                //  System.out.println("Generated Emp Id: " + rs.getInt(1));
+                //  InsertCallPk = rs.getInt(1);
             }
 
             System.out.println("Completed Insert");
@@ -227,10 +291,8 @@ public class InsertSQL {
             System.out.println(e);
         }
     }
-    
-     
-    
-      public static void DispatchResponder(int dispatch,  int ResponderNumber) {
+
+    public static void DispatchResponder(int dispatch, int ResponderNumber) {
 
         try {
             System.out.println("wait Insert");
@@ -247,12 +309,12 @@ public class InsertSQL {
             PreparedStatement preparedStatement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, dispatch);
             preparedStatement.setInt(2, ResponderNumber);
-          
+
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {
-             //   System.out.println("Generated Emp Id: " + rs.getInt(1));
-             //   ResponderPK = rs.getInt(1);
+                //   System.out.println("Generated Emp Id: " + rs.getInt(1));
+                //   ResponderPK = rs.getInt(1);
             }
 
             System.out.println("Completed Insert");
@@ -261,12 +323,7 @@ public class InsertSQL {
             System.out.println(e);
         }
     }
-    
-    
-    
-    
-    
-    
+
     public static void Responder(String name, String status, String type, String Position) {
 
         try {
@@ -300,7 +357,7 @@ public class InsertSQL {
             System.out.println(e);
         }
     }
-    
+
     public static void ResponderAssignment(int responder, String assignment, int IncidentNumber) {
 
         try {
@@ -321,8 +378,6 @@ public class InsertSQL {
             preparedStatement.setBoolean(3, false);
             preparedStatement.setInt(4, IncidentNumber);
 
-    
-
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {
@@ -336,9 +391,8 @@ public class InsertSQL {
             System.out.println(e);
         }
     }
-    
-    
-     public static void ResponderLocation(String Location, String ETATOINCIDENT, int ResponderNumber) {
+
+    public static void ResponderLocation(String Location, String ETATOINCIDENT, int ResponderNumber) {
 
         try {
             System.out.println("wait Insert");
@@ -356,12 +410,12 @@ public class InsertSQL {
             preparedStatement.setString(1, Location);
             preparedStatement.setString(2, ETATOINCIDENT);
             preparedStatement.setInt(3, ResponderNumber);
-          
+
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {
-             //   System.out.println("Generated Emp Id: " + rs.getInt(1));
-             //   ResponderPK = rs.getInt(1);
+                //   System.out.println("Generated Emp Id: " + rs.getInt(1));
+                //   ResponderPK = rs.getInt(1);
             }
 
             System.out.println("Completed Insert");
@@ -372,5 +426,5 @@ public class InsertSQL {
     }
     
     
-    
+
 }

@@ -19,6 +19,9 @@ public class SQLConnections {
      *
      */
     public static List<UserInfo> users = new ArrayList<UserInfo>();
+        public static List<Operator> operatorList = new ArrayList<Operator>();
+        public static List<Alarm> alarmList = new ArrayList<Alarm>();
+
     public static List<Caller> callerList = new ArrayList<Caller>();
     public static List<Officers> officersList = new ArrayList<Officers>();
     public static List<OfficerAssignment> officerAssignmentList = new ArrayList<OfficerAssignment>();
@@ -248,4 +251,66 @@ public class SQLConnections {
         }
     }
 
+    
+    
+    public static void OperatorInfo() {
+        try {
+            String driver = "com.mysql.jdbc.Driver";
+            String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_c511b6e038c9438";
+            String username = "b57fbaa3a5275d";
+            String password = "fbe8c1ca";
+            Class.forName(driver);
+
+            Connection conn = DriverManager.getConnection(url, username, password);
+            String sql = "Select operatorID, operatorName From Operator;";
+
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                int operatorId = rs.getInt("operatorID");
+
+                String name = rs.getString("operatorName");
+
+                Operator op = new Operator(operatorId, name);
+                operatorList.add(op);
+            }
+
+            System.out.println("Connected");
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
+    
+     public static void AlarmInformation() {
+        try {
+            String driver = "com.mysql.jdbc.Driver";
+            String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_c511b6e038c9438";
+            String username = "b57fbaa3a5275d";
+            String password = "fbe8c1ca";
+            Class.forName(driver);
+
+            Connection conn = DriverManager.getConnection(url, username, password);
+            String sql = "Select AlarmID, AlarmName, AlarmType, AlarmLocation From RecieveCall;";
+
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                int alarmID = rs.getInt("AlarmID");
+
+                String name = rs.getString("AlarmName");;
+
+                String desc = rs.getString("AlarmType");;
+                String Location = rs.getString("AlarmLocation");;
+                Alarm alarmInfo = new Alarm(alarmID, name, desc, Location);
+                alarmList.add(alarmInfo);
+            }
+
+            System.out.println("Connected");
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 }
