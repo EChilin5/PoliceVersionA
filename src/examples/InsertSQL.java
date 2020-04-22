@@ -22,6 +22,10 @@ public class InsertSQL {
     public static int IncidentReportPK;
     public static int DispatcherPK;
 
+    public static int getResponderPK() {
+        return ResponderPK;
+    }
+    
     public static int getIncidentReportPK() {
         return IncidentReportPK;
     }

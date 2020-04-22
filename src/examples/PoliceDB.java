@@ -815,8 +815,11 @@ public class PoliceDB extends javax.swing.JFrame {
     }//GEN-LAST:event_CompleteUpdateActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    dispose();
+   
+        AddNewOfficer hc = new AddNewOfficer();
+        hc.setVisible(true);
+          }//GEN-LAST:event_jButton1ActionPerformed
 
     private void UpdateStausActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateStausActionPerformed
         String updateStatus =EditStatus.getText();
