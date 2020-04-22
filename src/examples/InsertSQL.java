@@ -110,7 +110,7 @@ public class InsertSQL {
             String sql = "INSERT INTO RecieveCall (holdStatus, Name, Descritpion)"
                     + " VALUES (?,?,?);";
             PreparedStatement preparedStatement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setBoolean(1, true);
+            preparedStatement.setBoolean(1, false);
             preparedStatement.setString(2, name);
             preparedStatement.setString(3, description);
 

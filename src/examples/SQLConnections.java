@@ -44,6 +44,7 @@ public class SQLConnections {
             preparedStatement.executeUpdate();
 
             System.out.println("Connected");
+            conn.close();
             return conn;
         } catch (Exception e) {
             System.out.println(e);
@@ -84,6 +85,7 @@ public class SQLConnections {
 
     public static void OfficerInformation() {
         try {
+            officersList.clear();
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_c511b6e038c9438";
             String username = "b57fbaa3a5275d";
@@ -98,7 +100,8 @@ public class SQLConnections {
                     + " ResponderLocation.ResponderNumber as BadgeNumber, "
                     + "ResponderLocation.CarNumberID as carNumber"
                     + " From Responder Inner Join ResponderLocation "
-                    + "on ResponderLocation.ResponderNumber = Responder.ResponderNumber\n";
+                    + "on ResponderLocation.ResponderNumber = Responder.ResponderNumber "
+                    + " Order BY ResponderLocation.Location \n";
 
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
@@ -125,6 +128,7 @@ public class SQLConnections {
 
     public static void OfficerAssigments() {
         try {
+            officerAssignmentList.clear();
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_c511b6e038c9438";
             String username = "b57fbaa3a5275d";
@@ -169,6 +173,7 @@ public class SQLConnections {
 
     public static void callerInformaiton() {
         try {
+            callerList.clear();
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_c511b6e038c9438";
             String username = "b57fbaa3a5275d";
@@ -176,7 +181,9 @@ public class SQLConnections {
             Class.forName(driver);
 
             Connection conn = DriverManager.getConnection(url, username, password);
-            String sql = "Select RecieveCallID, holdStatus, Name, Descritpion From RecieveCall;";
+            String sql = "Select RecieveCallID, holdStatus, "
+                    + " Name, Descritpion From RecieveCall"
+                    + " ORDER BY holdStatus and RecieveCallID;";
 
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
@@ -200,6 +207,7 @@ public class SQLConnections {
 
     public static void IncidentReportInfo() {
         try {
+            incidentList.clear();
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_c511b6e038c9438";
             String username = "b57fbaa3a5275d";
@@ -255,6 +263,7 @@ public class SQLConnections {
 
       public static void DispatcherInfo() {
         try {
+            dispatcherList.clear();
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_c511b6e038c9438";
             String username = "b57fbaa3a5275d";
@@ -290,6 +299,7 @@ public class SQLConnections {
     
     public static void OperatorInfo() {
         try {
+            operatorList.clear();
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_c511b6e038c9438";
             String username = "b57fbaa3a5275d";
@@ -319,6 +329,7 @@ public class SQLConnections {
 
     public static void AlarmInformation() {
         try {
+            alarmList.clear();
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_c511b6e038c9438";
             String username = "b57fbaa3a5275d";

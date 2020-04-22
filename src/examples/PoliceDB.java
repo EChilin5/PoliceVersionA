@@ -31,20 +31,24 @@ public class PoliceDB extends javax.swing.JFrame {
         initComponents();
         try {
             //  SQLConnections.getConnection();
-            SQLConnections.RetrieveInformaiton();
-            SQLConnections.OfficerInformation();
-            SQLConnections.OfficerAssigments();
-            SQLConnections.callerInformaiton();
-            SQLConnections.AlarmInformation();
-            SQLConnections.IncidentReportInfo();
-            OfficerAssignmentTableUpdate();
-            OfficerTable();
-            updateIncidentReport();
-            CallerTable();
-            AlarmTableGrid();
+            // SQLConnections.RetrieveInformaiton();
+            Refresh();
         } catch (Exception ex) {
             Logger.getLogger(PoliceDB.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public void Refresh() {
+        SQLConnections.OfficerInformation();
+        SQLConnections.OfficerAssigments();
+        SQLConnections.callerInformaiton();
+        SQLConnections.AlarmInformation();
+        SQLConnections.IncidentReportInfo();
+        OfficerAssignmentTableUpdate();
+        OfficerTable();
+        updateIncidentReport();
+        CallerTable();
+        AlarmTableGrid();
     }
 
     /**
@@ -56,8 +60,8 @@ public class PoliceDB extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel4 = new javax.swing.JPanel();
+        Home = new javax.swing.JTabbedPane();
+        MakeCall = new javax.swing.JPanel();
         MakeCallName = new javax.swing.JTextField();
         MakeCallDescritpion = new javax.swing.JTextField();
         SubmitCall = new javax.swing.JToggleButton();
@@ -66,7 +70,14 @@ public class PoliceDB extends javax.swing.JFrame {
         AlarmNumberVerify = new javax.swing.JTextField();
         jToggleButton1 = new javax.swing.JToggleButton();
         AlarmWindow = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        OperatorFinalPage = new javax.swing.JPanel();
         Description = new javax.swing.JTextField();
         CallerName = new javax.swing.JTextField();
         PoliceCode = new javax.swing.JTextField();
@@ -77,11 +88,21 @@ public class PoliceDB extends javax.swing.JFrame {
         Location = new javax.swing.JTextField();
         IncidentType = new javax.swing.JTextField();
         Priority = new javax.swing.JTextField();
-        jPanel5 = new javax.swing.JPanel();
+        Operator = new javax.swing.JPanel();
         callNumberText = new javax.swing.JTextField();
         CallerIDsave = new javax.swing.JTextField();
         Addop = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        Dispatcher = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
         ReportSearch = new javax.swing.JTextField();
@@ -90,7 +111,14 @@ public class PoliceDB extends javax.swing.JFrame {
         IncidentNumberDP = new javax.swing.JTextField();
         StartAssigning = new javax.swing.JButton();
         newDispatcher = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        DispatcherLocation = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        ClearDp = new javax.swing.JButton();
+        Officer = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -99,36 +127,40 @@ public class PoliceDB extends javax.swing.JFrame {
         SearchLocation = new javax.swing.JButton();
         Reset = new javax.swing.JButton();
         FinalAssignment = new javax.swing.JTextField();
-        FinalBadgeNumber = new javax.swing.JTextField();
         CompleteAssignment = new javax.swing.JButton();
         FinalIncidentNumber = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         EditStatus = new javax.swing.JTextField();
         UpdateBadgeStatus = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         UpdateStaus = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        Complete = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         AssigmentStatusTable = new javax.swing.JTable();
         AssignmentPK = new javax.swing.JTextField();
         CompleteUpdate = new javax.swing.JButton();
         Verify = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        Refresh = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 800));
-        setPreferredSize(new java.awt.Dimension(747, 600));
 
-        jTabbedPane1.setMaximumSize(new java.awt.Dimension(500, 500));
-        jTabbedPane1.setPreferredSize(new java.awt.Dimension(747, 800));
+        Home.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        Home.setMaximumSize(new java.awt.Dimension(500, 500));
+        Home.setPreferredSize(new java.awt.Dimension(747, 590));
+        Home.setRequestFocusEnabled(false);
 
-        MakeCallName.setText("Name");
         MakeCallName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MakeCallNameActionPerformed(evt);
             }
         });
-
-        MakeCallDescritpion.setText("Descritpion");
 
         SubmitCall.setText("Make Call");
         SubmitCall.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +179,11 @@ public class PoliceDB extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(Alarm);
 
-        AlarmNumberVerify.setText("Alarm Number");
+        AlarmNumberVerify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlarmNumberVerifyActionPerformed(evt);
+            }
+        });
 
         jToggleButton1.setText("Send Alarm");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -163,71 +199,130 @@ public class PoliceDB extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(AlarmNumberVerify, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AlarmWindow)
-                            .addComponent(jToggleButton1))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(MakeCallName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(MakeCallDescritpion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(SubmitCall)
-                        .addGap(8, 8, 8)))
-                .addGap(66, 66, 66))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(MakeCallName, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(MakeCallDescritpion, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SubmitCall)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(AlarmNumberVerify, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jToggleButton1)))
+        jLabel4.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel4.setText("Make Call");
+
+        jLabel5.setText("Alarm Number:");
+
+        jLabel6.setText("Description:");
+
+        jLabel7.setText("Caller Name:");
+
+        jLabel22.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel22.setText("Alarm");
+
+        jButton5.setText("Refresh Gui");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("Clear");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout MakeCallLayout = new javax.swing.GroupLayout(MakeCall);
+        MakeCall.setLayout(MakeCallLayout);
+        MakeCallLayout.setHorizontalGroup(
+            MakeCallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MakeCallLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AlarmNumberVerify, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(AlarmWindow)
-                .addContainerGap(5006, Short.MAX_VALUE))
+                .addGroup(MakeCallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MakeCallLayout.createSequentialGroup()
+                        .addComponent(AlarmWindow)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(MakeCallLayout.createSequentialGroup()
+                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(427, Short.MAX_VALUE))))
+            .addGroup(MakeCallLayout.createSequentialGroup()
+                .addGroup(MakeCallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MakeCallLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(MakeCallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(MakeCallLayout.createSequentialGroup()
+                                .addGap(151, 151, 151)
+                                .addComponent(jLabel4))
+                            .addGroup(MakeCallLayout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addGroup(MakeCallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel6))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(MakeCallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(MakeCallDescritpion, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(MakeCallName, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(MakeCallLayout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(SubmitCall))))))
+                    .addGroup(MakeCallLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton5)
+                        .addGap(253, 253, 253)
+                        .addComponent(jButton7)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(MakeCallLayout.createSequentialGroup()
+                .addGap(131, 131, 131)
+                .addComponent(jLabel22)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        MakeCallLayout.setVerticalGroup(
+            MakeCallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MakeCallLayout.createSequentialGroup()
+                .addGroup(MakeCallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton5)
+                    .addComponent(jButton7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(MakeCallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(MakeCallLayout.createSequentialGroup()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addGroup(MakeCallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(AlarmNumberVerify, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jToggleButton1)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(AlarmWindow)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(MakeCallLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(MakeCallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MakeCallName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(MakeCallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(MakeCallDescritpion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(SubmitCall)
+                        .addGap(5102, 5102, 5102))))
         );
 
-        jTabbedPane1.addTab("Make Call", jPanel4);
+        Home.addTab("Make Call", MakeCall);
 
-        Description.setText("Description");
         Description.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DescriptionActionPerformed(evt);
             }
         });
 
-        CallerName.setText("Caller Name");
         CallerName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CallerNameActionPerformed(evt);
             }
         });
 
-        PoliceCode.setText("Police Code");
         PoliceCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PoliceCodeActionPerformed(evt);
@@ -242,7 +337,7 @@ public class PoliceDB extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Caller", "Time", "Hold"
+                "Caller", "Description", "Hold"
             }
         ));
         jScrollPane3.setViewportView(jTable3);
@@ -261,31 +356,28 @@ public class PoliceDB extends javax.swing.JFrame {
             }
         });
 
-        Location.setText("Location");
         Location.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LocationActionPerformed(evt);
             }
         });
 
-        IncidentType.setText("Incident Type");
+        IncidentType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IncidentTypeActionPerformed(evt);
+            }
+        });
 
-        Priority.setText("Priority");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout OperatorLayout = new javax.swing.GroupLayout(Operator);
+        Operator.setLayout(OperatorLayout);
+        OperatorLayout.setHorizontalGroup(
+            OperatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 59, Short.MAX_VALUE)
+        );
+        OperatorLayout.setVerticalGroup(
+            OperatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        callNumberText.setText("Call Number");
-
-        CallerIDsave.setText("Caller ID");
 
         Addop.setText("Add Operator");
         Addop.addActionListener(new java.awt.event.ActionListener() {
@@ -294,73 +386,156 @@ public class PoliceDB extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CallerName)
-                    .addComponent(Location)
-                    .addComponent(Description)
-                    .addComponent(PoliceCode)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(SendReport)
+        jLabel8.setText("Incident Type:");
+
+        jLabel9.setText("Caller ID:");
+
+        jLabel10.setText("Caller Name:");
+
+        jLabel11.setText("Location:");
+
+        jLabel12.setText("Descritpion:");
+
+        jLabel13.setText("Police Code:");
+
+        jLabel14.setText("Priority:");
+
+        jLabel15.setText("Call Number:");
+
+        jButton4.setText("Refresh Gui");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Clear");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout OperatorFinalPageLayout = new javax.swing.GroupLayout(OperatorFinalPage);
+        OperatorFinalPage.setLayout(OperatorFinalPageLayout);
+        OperatorFinalPageLayout.setHorizontalGroup(
+            OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(OperatorFinalPageLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(OperatorFinalPageLayout.createSequentialGroup()
+                        .addComponent(jButton4)
                         .addGap(18, 18, 18)
-                        .addComponent(Addop))
-                    .addComponent(Priority)
-                    .addComponent(CallerIDsave)
-                    .addComponent(IncidentType, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(callNumberText, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(GetCall))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(67, 67, 67))
+                        .addComponent(jButton6))
+                    .addGroup(OperatorFinalPageLayout.createSequentialGroup()
+                        .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(OperatorFinalPageLayout.createSequentialGroup()
+                                .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OperatorFinalPageLayout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(CallerIDsave, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OperatorFinalPageLayout.createSequentialGroup()
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(CallerName, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OperatorFinalPageLayout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(Location, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OperatorFinalPageLayout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Description, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OperatorFinalPageLayout.createSequentialGroup()
+                                        .addComponent(jLabel13)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(PoliceCode, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OperatorFinalPageLayout.createSequentialGroup()
+                                        .addComponent(jLabel14)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Priority, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OperatorFinalPageLayout.createSequentialGroup()
+                                        .addComponent(SendReport)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Addop)))
+                                .addGap(20, 20, 20))
+                            .addGroup(OperatorFinalPageLayout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(IncidentType, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)))
+                        .addComponent(Operator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(OperatorFinalPageLayout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(callNumberText)
+                                .addGap(18, 18, 18)
+                                .addComponent(GetCall))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+        OperatorFinalPageLayout.setVerticalGroup(
+            OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(OperatorFinalPageLayout.createSequentialGroup()
+                .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(OperatorFinalPageLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(GetCall)
-                            .addComponent(callNumberText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(callNumberText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(OperatorFinalPageLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(IncidentType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Operator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OperatorFinalPageLayout.createSequentialGroup()
+                        .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(OperatorFinalPageLayout.createSequentialGroup()
+                                .addComponent(jButton4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OperatorFinalPageLayout.createSequentialGroup()
+                                .addComponent(jButton6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(IncidentType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CallerIDsave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CallerIDsave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(CallerName, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CallerName, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Location, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Description, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Location, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11))
+                        .addGap(10, 10, 10)
+                        .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Description, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PoliceCode, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16)
-                        .addComponent(Priority, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PoliceCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(SendReport)
-                            .addComponent(Addop))
-                        .addGap(38, 38, 38)))
+                        .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Priority, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Addop)
+                            .addComponent(SendReport))
+                        .addGap(116, 116, 116)))
                 .addGap(10, 10, 10))
         );
 
-        jTabbedPane1.addTab("Operator", jPanel2);
+        Home.addTab("Operator", OperatorFinalPage);
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -375,7 +550,6 @@ public class PoliceDB extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jTable4);
 
-        ReportSearch.setText("jTextField1");
         ReportSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ReportSearchActionPerformed(evt);
@@ -389,14 +563,11 @@ public class PoliceDB extends javax.swing.JFrame {
             }
         });
 
-        IncidentNameDP.setText("Incident Name");
         IncidentNameDP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IncidentNameDPActionPerformed(evt);
             }
         });
-
-        IncidentNumberDP.setText("Incident Number");
 
         StartAssigning.setText("Start Assigning Task");
         StartAssigning.addActionListener(new java.awt.event.ActionListener() {
@@ -412,57 +583,112 @@ public class PoliceDB extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(IncidentNameDP)
-                        .addComponent(IncidentNumberDP, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(StartAssigning)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(newDispatcher)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(ReportSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(GetReport, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(GetReport))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ReportSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(IncidentNameDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jLabel16.setText("Incident Number:");
+
+        jLabel17.setText("Incident Name:");
+
+        jLabel18.setText("Incident Number:");
+
+        jLabel19.setText("Incident Location:");
+
+        jButton3.setText("Refresh Gui");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        ClearDp.setText("Clear");
+        ClearDp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClearDpActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout DispatcherLayout = new javax.swing.GroupLayout(Dispatcher);
+        Dispatcher.setLayout(DispatcherLayout);
+        DispatcherLayout.setHorizontalGroup(
+            DispatcherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DispatcherLayout.createSequentialGroup()
+                .addGroup(DispatcherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DispatcherLayout.createSequentialGroup()
+                        .addContainerGap(77, Short.MAX_VALUE)
+                        .addGroup(DispatcherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DispatcherLayout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addGap(18, 18, 18)
+                                .addComponent(IncidentNameDP, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DispatcherLayout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(IncidentNumberDP, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DispatcherLayout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(DispatcherLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DispatcherLayout.createSequentialGroup()
+                                .addGroup(DispatcherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(StartAssigning, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(newDispatcher, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(76, 76, 76)))
+                        .addGap(18, 18, 18))
+                    .addGroup(DispatcherLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jButton3)
                         .addGap(18, 18, 18)
-                        .addComponent(IncidentNumberDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(StartAssigning)
-                            .addComponent(newDispatcher))))
-                .addContainerGap(4796, Short.MAX_VALUE))
+                        .addComponent(ClearDp)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(DispatcherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DispatcherLayout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addGap(45, 45, 45)
+                        .addComponent(ReportSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(GetReport))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43))
+        );
+        DispatcherLayout.setVerticalGroup(
+            DispatcherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DispatcherLayout.createSequentialGroup()
+                .addGroup(DispatcherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DispatcherLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(DispatcherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(GetReport)
+                            .addComponent(ReportSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16)))
+                    .addGroup(DispatcherLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(DispatcherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton3)
+                            .addComponent(ClearDp))))
+                .addGap(18, 18, 18)
+                .addGroup(DispatcherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DispatcherLayout.createSequentialGroup()
+                        .addGroup(DispatcherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(IncidentNameDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17))
+                        .addGap(10, 10, 10)
+                        .addGroup(DispatcherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(IncidentNumberDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(DispatcherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(DispatcherLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel19))
+                        .addGap(18, 18, 18)
+                        .addComponent(StartAssigning)
+                        .addGap(22, 22, 22)
+                        .addComponent(newDispatcher))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Dispatcher", jPanel6);
+        Home.addTab("Dispatcher", Dispatcher);
 
-        jPanel3.setMaximumSize(new java.awt.Dimension(295, 295));
-        jPanel3.setPreferredSize(new java.awt.Dimension(295, 295));
+        Officer.setMaximumSize(new java.awt.Dimension(295, 295));
+        Officer.setPreferredSize(new java.awt.Dimension(295, 295));
 
         jLabel1.setText("Officer Location ");
 
@@ -478,7 +704,6 @@ public class PoliceDB extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable2);
 
-        SearchButton.setText("Locaton");
         SearchButton.setToolTipText("");
         SearchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -501,9 +726,11 @@ public class PoliceDB extends javax.swing.JFrame {
             }
         });
 
-        FinalAssignment.setText("Assignment");
-
-        FinalBadgeNumber.setText("Badge Number");
+        FinalAssignment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FinalAssignmentActionPerformed(evt);
+            }
+        });
 
         CompleteAssignment.setText("Assign");
         CompleteAssignment.addActionListener(new java.awt.event.ActionListener() {
@@ -512,8 +739,6 @@ public class PoliceDB extends javax.swing.JFrame {
             }
         });
 
-        FinalIncidentNumber.setText("Incident #");
-
         jButton1.setText("Add new Officer");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -521,16 +746,11 @@ public class PoliceDB extends javax.swing.JFrame {
             }
         });
 
-        EditStatus.setText("Staus");
-
-        UpdateBadgeStatus.setText("Badge Number");
         UpdateBadgeStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateBadgeStatusActionPerformed(evt);
             }
         });
-
-        jLabel3.setText("Officer Status Update");
 
         UpdateStaus.setText("Update Status");
         UpdateStaus.addActionListener(new java.awt.event.ActionListener() {
@@ -539,78 +759,112 @@ public class PoliceDB extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(92, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addGap(15, 15, 15)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(EditStatus)
-                    .addComponent(SearchButton, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                    .addComponent(FinalAssignment))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(SearchLocation)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Reset))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+        jLabel20.setText("Officer Status");
+
+        jLabel23.setText("Incident  #");
+
+        jLabel24.setText("Officer Badge:");
+
+        jButton2.setText("Refresh Gui");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setText("Clear");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout OfficerLayout = new javax.swing.GroupLayout(Officer);
+        Officer.setLayout(OfficerLayout);
+        OfficerLayout.setHorizontalGroup(
+            OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(OfficerLayout.createSequentialGroup()
+                .addGap(109, 109, 109)
+                .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(OfficerLayout.createSequentialGroup()
+                        .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel24))
+                        .addGap(32, 32, 32)
+                        .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(UpdateBadgeStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
-                            .addComponent(FinalIncidentNumber))
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(FinalBadgeNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(CompleteAssignment))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(UpdateStaus)))))
+                            .addComponent(EditStatus)
+                            .addComponent(SearchButton)))
+                    .addComponent(FinalAssignment, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(OfficerLayout.createSequentialGroup()
+                        .addComponent(SearchLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(UpdateStaus, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(OfficerLayout.createSequentialGroup()
+                        .addComponent(jLabel23)
+                        .addGap(18, 18, 18)
+                        .addComponent(FinalIncidentNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(CompleteAssignment, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OfficerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
-                .addGap(1, 1, 1)
+                .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(OfficerLayout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 449, Short.MAX_VALUE)
+                        .addComponent(jButton1))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 708, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50))
+        );
+        OfficerLayout.setVerticalGroup(
+            OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(OfficerLayout.createSequentialGroup()
+                .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(OfficerLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jButton1))
+                    .addGroup(OfficerLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2)
+                            .addComponent(jButton8))))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(34, 34, 34)
+                .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(SearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SearchLocation)
-                    .addComponent(Reset))
-                .addGap(4, 4, 4)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EditStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UpdateBadgeStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(UpdateStaus))
+                    .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(SearchLocation)
+                        .addComponent(Reset)
+                        .addComponent(SearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(UpdateBadgeStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24))
+                .addGap(11, 11, 11)
+                .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EditStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20)
+                    .addComponent(UpdateStaus))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(FinalAssignment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FinalBadgeNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CompleteAssignment)
-                    .addComponent(FinalIncidentNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(4906, Short.MAX_VALUE))
+                    .addComponent(jLabel23)
+                    .addComponent(FinalIncidentNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CompleteAssignment))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Officer Info", jPanel3);
+        Home.addTab("Officer Info", Officer);
 
         AssigmentStatusTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -630,8 +884,6 @@ public class PoliceDB extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(AssigmentStatusTable);
 
-        AssignmentPK.setText("Assignment Name");
-
         CompleteUpdate.setText("Complete");
         CompleteUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -639,53 +891,88 @@ public class PoliceDB extends javax.swing.JFrame {
             }
         });
 
-        Verify.setText("Incident #");
+        jLabel3.setText("Assignment Name:");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+        jLabel21.setText("Incident Number:");
+
+        Refresh.setText("Refresh Gui");
+        Refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RefreshActionPerformed(evt);
+            }
+        });
+
+        jButton9.setText("Clear");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CompleteLayout = new javax.swing.GroupLayout(Complete);
+        Complete.setLayout(CompleteLayout);
+        CompleteLayout.setHorizontalGroup(
+            CompleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CompleteLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addGroup(CompleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(AssignmentPK, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Verify, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
-                        .addComponent(CompleteUpdate)))
-                .addGap(89, 89, 89))
+                    .addGroup(CompleteLayout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addGroup(CompleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel21))
+                        .addGap(18, 18, 18)
+                        .addGroup(CompleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(AssignmentPK, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                            .addComponent(CompleteUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Verify))))
+                .addGap(91, 91, 91))
+            .addGroup(CompleteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Refresh)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton9)
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+        CompleteLayout.setVerticalGroup(
+            CompleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CompleteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(CompleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Refresh)
+                    .addComponent(jButton9))
+                .addGap(16, 16, 16)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(CompleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AssignmentPK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CompleteUpdate)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addGroup(CompleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
                     .addComponent(Verify, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(4884, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(CompleteUpdate)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Complete", jPanel1);
+        Home.addTab("Complete", Complete);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Home, javax.swing.GroupLayout.DEFAULT_SIZE, 797, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 16, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 5323, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 584, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.getAccessibleContext().setAccessibleName("OfficerInfo");
+        Home.getAccessibleContext().setAccessibleName("OfficerInfo");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -704,7 +991,11 @@ public class PoliceDB extends javax.swing.JFrame {
 
     private void GetCallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GetCallActionPerformed
         int id = Integer.parseInt(callNumberText.getText().trim());
+        UpdateSQL.CallStatus(id);
+        SQLConnections.callerInformaiton();
+         CallerTable();
         GetCall(id);
+        
     }//GEN-LAST:event_GetCallActionPerformed
 
     private void MakeCallNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MakeCallNameActionPerformed
@@ -758,7 +1049,7 @@ public class PoliceDB extends javax.swing.JFrame {
                     //   JOptionPane.showMessageDialog(null, "Caller Name : "+SQLConnections.callerList.get(i).getName()+ "\n"
                     //   +"Description: \n"+SQLConnections.callerList.get(i).getDescription());
                     JFrame frame = new JFrame("Test Frame");
-                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                     JLabel label = new JLabel("My label", SwingConstants.CENTER);
                     label.setText("Caller Name : " + SQLConnections.callerList.get(i).getName() + "\n"
                             + "Description: \n" + SQLConnections.callerList.get(i).getDescription());
@@ -767,6 +1058,7 @@ public class PoliceDB extends javax.swing.JFrame {
                     frame.setSize(new Dimension(500, 200));
 
                     frame.setVisible(true);
+
                 }
             }
         } catch (Exception e) {
@@ -777,7 +1069,7 @@ public class PoliceDB extends javax.swing.JFrame {
 
     private void GetReportInfo(int i) {
         JFrame frame = new JFrame("Test Frame");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         JLabel label = new JLabel("My label");
         label.setText("Caller Name : " + SQLConnections.incidentList.get(i).getName() + "\n"
                 + "Description: \n" + SQLConnections.incidentList.get(i).getDescription());
@@ -809,6 +1101,8 @@ public class PoliceDB extends javax.swing.JFrame {
         InsertSQL.InsertCall(name, description);
         SQLConnections.callerInformaiton();
         CallerTable();
+        SQLConnections.IncidentReportInfo();
+        updateIncidentReport();
     }//GEN-LAST:event_SubmitCallActionPerformed
 
     private void SendReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendReportActionPerformed
@@ -865,17 +1159,20 @@ public class PoliceDB extends javax.swing.JFrame {
     private void StartAssigningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartAssigningActionPerformed
         String name = IncidentNameDP.getText();
         String Number = IncidentNumberDP.getText();
-
+        String Location = DispatcherLocation.getText();
         FinalAssignment.setText(name);
         FinalIncidentNumber.setText(Number);
+        SearchButton.setText(Location);
     }//GEN-LAST:event_StartAssigningActionPerformed
 
     private void CompleteAssignmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompleteAssignmentActionPerformed
         int incidentNumber = Integer.parseInt(FinalIncidentNumber.getText().trim());
-        int responder = Integer.parseInt(FinalBadgeNumber.getText().trim());
+        int responder = Integer.parseInt(UpdateBadgeStatus.getText().trim());
         String Assignment = FinalAssignment.getText();
         InsertSQL.ResponderAssignment(responder, Assignment, incidentNumber);
         System.out.println("Complete");
+        SQLConnections.OfficerAssigments();
+        OfficerAssignmentTableUpdate();
 
     }//GEN-LAST:event_CompleteAssignmentActionPerformed
 
@@ -883,14 +1180,14 @@ public class PoliceDB extends javax.swing.JFrame {
 
         String assignment = AssignmentPK.getText().trim();
         int incidentkey = Integer.parseInt(Verify.getText().trim());
-        for(int i = 0; i < SQLConnections.officerAssignmentList.size(); i++){
-            if(assignment.contains(SQLConnections.officerAssignmentList.get(i).getAssignment()) &&
-                    incidentkey == SQLConnections.officerAssignmentList.get(i).getIncidentReportID() ){
+        for (int i = 0; i < SQLConnections.officerAssignmentList.size(); i++) {
+            if (assignment.contains(SQLConnections.officerAssignmentList.get(i).getAssignment())
+                    && incidentkey == SQLConnections.officerAssignmentList.get(i).getIncidentReportID()) {
                 int key = SQLConnections.officerAssignmentList.get(i).getAssignmentNumber();
-                  UpdateSQL.ResponderAssignment(key);
+                UpdateSQL.ResponderAssignment(key);
             }
         }
-      
+
 
     }//GEN-LAST:event_CompleteUpdateActionPerformed
 
@@ -905,6 +1202,9 @@ public class PoliceDB extends javax.swing.JFrame {
         String updateStatus = EditStatus.getText();
         int badge = Integer.parseInt(UpdateBadgeStatus.getText().trim());
         UpdateSQL.ResponderStatus(badge, updateStatus);
+        SQLConnections.OfficerInformation();
+        OfficerTable();
+
     }//GEN-LAST:event_UpdateStausActionPerformed
 
     private void UpdateBadgeStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBadgeStatusActionPerformed
@@ -921,7 +1221,7 @@ public class PoliceDB extends javax.swing.JFrame {
                 String location = SQLConnections.alarmList.get(i).getAlarmLocation();
                 String incidentType = SQLConnections.alarmList.get(i).getAlarmType();
                 String priority = "2";
-                String policeCode ="3";
+                String policeCode = "3";
                 System.out.print(incidentType + " " + name + " " + location + " "
                         + description + " " + Integer.parseInt(policeCode.trim()));
                 InsertSQL.IncidentReport(incidentType, name, location,
@@ -929,31 +1229,103 @@ public class PoliceDB extends javax.swing.JFrame {
                 InsertSQL.Priority(priority, InsertSQL.getIncidentReportPK());
                 InsertSQL.ReicieveCallIncidentReport(Integer.parseInt(callid), InsertSQL.getIncidentReportPK());
             }
-        }
 
+        }
+        SQLConnections.IncidentReportInfo();
+        updateIncidentReport();
 
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void AddopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddopActionPerformed
-                dispose();
+        dispose();
 
-       AddOperator hc = new AddOperator();
+        AddOperator hc = new AddOperator();
         hc.setVisible(true);
     }//GEN-LAST:event_AddopActionPerformed
 
     private void newDispatcherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newDispatcherActionPerformed
-         dispose();
+        dispose();
 
-       CreateNewDispatcher hc = new CreateNewDispatcher();
+        CreateNewDispatcher hc = new CreateNewDispatcher();
         hc.setVisible(true);
     }//GEN-LAST:event_newDispatcherActionPerformed
 
     private void AlarmWindowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlarmWindowActionPerformed
-       dispose();
+        dispose();
 
-       CreateAlarm hc = new CreateAlarm();
+        CreateAlarm hc = new CreateAlarm();
         hc.setVisible(true);
     }//GEN-LAST:event_AlarmWindowActionPerformed
+
+    private void AlarmNumberVerifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlarmNumberVerifyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AlarmNumberVerifyActionPerformed
+
+    private void IncidentTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IncidentTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IncidentTypeActionPerformed
+
+    private void RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshActionPerformed
+        Refresh();
+    }//GEN-LAST:event_RefreshActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Refresh();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        Refresh();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Refresh();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Refresh();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void ClearDpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearDpActionPerformed
+       ReportSearch.setText("");
+       IncidentNameDP.setText("");
+       IncidentNumberDP.setText("");
+       DispatcherLocation.setText("");
+    }//GEN-LAST:event_ClearDpActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        AlarmNumberVerify.setText("");
+        MakeCallName.setText("");
+        MakeCallDescritpion.setText("");
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        SearchButton.setText("");
+        UpdateBadgeStatus.setText("");
+          FinalAssignment.setText("");
+        FinalIncidentNumber.setText("");
+        EditStatus.setText("");
+        
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+AssignmentPK.setText("");
+Verify.setText("");
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+         CallerIDsave.setText("");
+      CallerName.setText("");
+        Description.setText("");
+         Location.setText("");
+         IncidentType.setText("");
+        Priority.setText("");
+         PoliceCode.setText("");
+         callNumberText.setText("");
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void FinalAssignmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinalAssignmentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FinalAssignmentActionPerformed
 
     private void Insert() {
 
@@ -1003,7 +1375,7 @@ public class PoliceDB extends javax.swing.JFrame {
         model.setRowCount(0);
         for (int i = 0; i < SQLConnections.officerAssignmentList.size(); i++) {
             String Done = "No";
-            
+
             String name = SQLConnections.officerAssignmentList.get(i).getName();
             String ASSIGNMET = SQLConnections.officerAssignmentList.get(i).getAssignment();
             int number = SQLConnections.officerAssignmentList.get(i).getAssignmentNumber();
@@ -1014,7 +1386,7 @@ public class PoliceDB extends javax.swing.JFrame {
             if (Complete) {
                 Done = "Yes";
             }
-            Object[] tablerow = { ASSIGNMET, name,Integer.toString(badge), Integer.toString(incidentNumber),
+            Object[] tablerow = {ASSIGNMET, name, Integer.toString(badge), Integer.toString(incidentNumber),
                 Done};
             model.addRow(tablerow);
         }
@@ -1102,23 +1474,32 @@ public class PoliceDB extends javax.swing.JFrame {
     private javax.swing.JTextField AssignmentPK;
     private javax.swing.JTextField CallerIDsave;
     private javax.swing.JTextField CallerName;
+    private javax.swing.JButton ClearDp;
+    private javax.swing.JPanel Complete;
     private javax.swing.JButton CompleteAssignment;
     private javax.swing.JButton CompleteUpdate;
     private javax.swing.JTextField Description;
+    private javax.swing.JPanel Dispatcher;
+    private javax.swing.JTextField DispatcherLocation;
     private javax.swing.JTextField EditStatus;
     private javax.swing.JTextField FinalAssignment;
-    private javax.swing.JTextField FinalBadgeNumber;
     private javax.swing.JTextField FinalIncidentNumber;
     private javax.swing.JButton GetCall;
     private javax.swing.JButton GetReport;
+    private javax.swing.JTabbedPane Home;
     private javax.swing.JTextField IncidentNameDP;
     private javax.swing.JTextField IncidentNumberDP;
     private javax.swing.JTextField IncidentType;
     private javax.swing.JTextField Location;
+    private javax.swing.JPanel MakeCall;
     private javax.swing.JTextField MakeCallDescritpion;
     private javax.swing.JTextField MakeCallName;
+    private javax.swing.JPanel Officer;
+    private javax.swing.JPanel Operator;
+    private javax.swing.JPanel OperatorFinalPage;
     private javax.swing.JTextField PoliceCode;
     private javax.swing.JTextField Priority;
+    private javax.swing.JButton Refresh;
     private javax.swing.JTextField ReportSearch;
     private javax.swing.JButton Reset;
     private javax.swing.JTextField SearchButton;
@@ -1131,21 +1512,43 @@ public class PoliceDB extends javax.swing.JFrame {
     private javax.swing.JTextField Verify;
     private javax.swing.JTextField callNumberText;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
