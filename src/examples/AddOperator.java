@@ -5,6 +5,8 @@
  */
 package examples;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author edgarchilin
@@ -16,6 +18,9 @@ public class AddOperator extends javax.swing.JFrame {
      */
     public AddOperator() {
         initComponents();
+                    SQLConnections.OperatorInfo();
+
+        updateOperator();
     }
 
     /**
@@ -27,22 +32,118 @@ public class AddOperator extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Operator = new javax.swing.JTextField();
+        AddNewOperator = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        back = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Operator.setText("Operator");
+        Operator.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OperatorActionPerformed(evt);
+            }
+        });
+
+        AddNewOperator.setText("Add Operator");
+        AddNewOperator.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddNewOperatorActionPerformed(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "ID", "Operator"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Operator, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(AddNewOperator)
+                        .addGap(90, 90, 90))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(back)
+                        .addGap(18, 18, 18))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(back)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddNewOperator)
+                    .addComponent(Operator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void OperatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OperatorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OperatorActionPerformed
+
+    private void AddNewOperatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddNewOperatorActionPerformed
+        String operator = Operator.getText();
+        InsertSQL.OperatorTable(operator);
+    }//GEN-LAST:event_AddNewOperatorActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+             dispose();
+   
+        PoliceDB hc = new PoliceDB();
+        hc.setVisible(true);
+    }//GEN-LAST:event_backActionPerformed
+
+  
+    
+    
+    public void updateOperator() {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        // model.getDataVector().removeAllElements();
+        model.setRowCount(0);
+          System.out.println(SQLConnections.operatorList.size());
+        for (int i = 0; i < SQLConnections.operatorList.size(); i++) {
+            int incidentNumber = SQLConnections.operatorList.get(i).getOperatorID();
+         
+            String type = SQLConnections.operatorList.get(i).getOperatorName();
+ 
+
+            Object[] Arow = {Integer.toString(incidentNumber),  type};
+            model.addRow(Arow);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -79,5 +180,10 @@ public class AddOperator extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddNewOperator;
+    private javax.swing.JTextField Operator;
+    private javax.swing.JButton back;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

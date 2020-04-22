@@ -37,7 +37,7 @@ public class UpdateSQL {
             preparedStatement.setInt(2, assignment);
            
             preparedStatement.executeUpdate();
-          
+             conn.close();
             System.out.println("Completed Insert");
 
         } catch (Exception e) {
@@ -66,7 +66,7 @@ public class UpdateSQL {
             preparedStatement.setInt(2, responderNumber);
            
             preparedStatement.executeUpdate();
-          
+             conn.close();
             System.out.println("Completed Insert");
 
         } catch (Exception e) {

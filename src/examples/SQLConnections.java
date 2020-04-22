@@ -19,8 +19,9 @@ public class SQLConnections {
      *
      */
     public static List<UserInfo> users = new ArrayList<UserInfo>();
-        public static List<Operator> operatorList = new ArrayList<Operator>();
-        public static List<Alarm> alarmList = new ArrayList<Alarm>();
+    public static List<Operator> operatorList = new ArrayList<Operator>();
+    public static List<Alarm> alarmList = new ArrayList<Alarm>();
+    public static List<AddDispatcher> dispatcherList = new ArrayList<AddDispatcher>();
 
     public static List<Caller> callerList = new ArrayList<Caller>();
     public static List<Officers> officersList = new ArrayList<Officers>();
@@ -73,7 +74,7 @@ public class SQLConnections {
                 users.add(sqlData);
                 System.out.println("" + id);
             }
-
+            conn.close();
             System.out.println("Connected");
 
         } catch (Exception e) {
@@ -114,7 +115,7 @@ public class SQLConnections {
                         officerType, position, location, badgeNumber, carNumber);
                 officersList.add(officersInfo);
             }
-
+            conn.close();
             System.out.println("Connected");
 
         } catch (Exception e) {
@@ -139,7 +140,8 @@ public class SQLConnections {
                     + " ResponderAssignment.AssignmentID as ID "
                     + "From Responder "
                     + "Inner Join ResponderAssignment"
-                    + " On ResponderAssignment.ResponderNumber = Responder.ResponderNumber\n";
+                    + " On ResponderAssignment.ResponderNumber = Responder.ResponderNumber "
+                    + " ORDER BY ResponderAssignment.Complete; ";
 
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
@@ -153,12 +155,11 @@ public class SQLConnections {
                 boolean complete = rs.getBoolean("Complete");
                 int IncidentReportID = rs.getInt("IncidentReportID");
 
-
-                OfficerAssignment officersInfo = new OfficerAssignment(name, badgeNumber, assignment, 
+                OfficerAssignment officersInfo = new OfficerAssignment(name, badgeNumber, assignment,
                         assignmentNumber, complete, IncidentReportID);
                 officerAssignmentList.add(officersInfo);
             }
-
+            conn.close();
             System.out.println("Connected");
 
         } catch (Exception e) {
@@ -189,7 +190,7 @@ public class SQLConnections {
                 Caller callerInfo = new Caller(callerId, name, desc, hold);
                 callerList.add(callerInfo);
             }
-
+            conn.close();
             System.out.println("Connected");
 
         } catch (Exception e) {
@@ -222,28 +223,29 @@ public class SQLConnections {
                     + "Inner Join Priority "
                     + "on Priority.IncidentReportID = ReicieveCallIncidentReport.IncidentReportID "
                     + "Inner Join RecieveCall "
-                    + "on RecieveCall.RecieveCallID = ReicieveCallIncidentReport.RecieveCallID";
+                    + "on RecieveCall.RecieveCallID = ReicieveCallIncidentReport.RecieveCallID"
+                    + " ORDER BY Priority.PriorityType ";
 
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 int incidentReport = rs.getInt("IncidentReportID");;
                 String incidentType = rs.getString("IncidentType");
-                String name =rs.getString("Name");
+                String name = rs.getString("Name");
                 String location = rs.getString("Location");
-;
-                String description =rs.getString("Description");
+                ;
+                String description = rs.getString("Description");
                 int policeCode = rs.getInt("PoliceCode");;
-                int priorityType =rs.getInt("PriorityType");;
-                String time =rs.getString("PriorityTime");
+                int priorityType = rs.getInt("PriorityType");;
+                String time = rs.getString("PriorityTime");
                 int recieveCallID = rs.getInt("RecieveCallID");
 
-                     IncidentReport officersInfo = new IncidentReport(incidentReport, incidentType, name, location,
-                        description, policeCode, priorityType,  time,  recieveCallID
+                IncidentReport officersInfo = new IncidentReport(incidentReport, incidentType, name, location,
+                        description, policeCode, priorityType, time, recieveCallID
                 );
                 incidentList.add(officersInfo);
             }
-
+            conn.close();
             System.out.println("Connected");
 
         } catch (Exception e) {
@@ -251,6 +253,39 @@ public class SQLConnections {
         }
     }
 
+      public static void DispatcherInfo() {
+        try {
+            String driver = "com.mysql.jdbc.Driver";
+            String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_c511b6e038c9438";
+            String username = "b57fbaa3a5275d";
+            String password = "fbe8c1ca";
+            Class.forName(driver);
+
+            Connection conn = DriverManager.getConnection(url, username, password);
+            String sql = "Select DispatcherID, Name,Branch  From Operator;";
+
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                int dispatcherId = rs.getInt("DispatcherID");
+
+                String name = rs.getString("Name");
+                 String branch = rs.getString("Branch");
+
+                AddDispatcher op = new AddDispatcher(dispatcherId, name, branch);
+                dispatcherList.add(op);
+            }
+            conn.close();
+            System.out.println("Connected");
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
+    
+    
+    
     
     
     public static void OperatorInfo() {
@@ -274,16 +309,15 @@ public class SQLConnections {
                 Operator op = new Operator(operatorId, name);
                 operatorList.add(op);
             }
-
+            conn.close();
             System.out.println("Connected");
 
         } catch (Exception e) {
             System.out.println(e);
         }
     }
-    
-    
-     public static void AlarmInformation() {
+
+    public static void AlarmInformation() {
         try {
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_c511b6e038c9438";
@@ -292,7 +326,7 @@ public class SQLConnections {
             Class.forName(driver);
 
             Connection conn = DriverManager.getConnection(url, username, password);
-            String sql = "Select AlarmID, AlarmName, AlarmType, AlarmLocation From RecieveCall;";
+            String sql = "Select AlarmID, AlarmName, AlarmType, AlarmLocation From Alarm;";
 
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
@@ -306,7 +340,7 @@ public class SQLConnections {
                 Alarm alarmInfo = new Alarm(alarmID, name, desc, Location);
                 alarmList.add(alarmInfo);
             }
-
+            conn.close();
             System.out.println("Connected");
 
         } catch (Exception e) {
