@@ -73,29 +73,19 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="AlarmNumberVerify" min="-2" pref="136" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                      <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jScrollPane5" min="-2" pref="348" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="85" max="32767" attributes="0"/>
+                              <Component id="jScrollPane5" min="-2" pref="348" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="CreateAlarm" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="AlarmLocation" min="-2" pref="134" max="-2" attributes="0"/>
-                                      <Component id="AlarmType" min="-2" pref="134" max="-2" attributes="0"/>
-                                      <Component id="AlarmName" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
-                                  </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                              <Component id="AlarmNumberVerify" min="-2" pref="136" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="AlarmWindow" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace pref="85" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="MakeCallName" alignment="1" min="-2" pref="242" max="-2" attributes="0"/>
                           <Component id="MakeCallDescritpion" alignment="1" min="-2" pref="242" max="-2" attributes="0"/>
@@ -117,28 +107,23 @@
                               <Component id="MakeCallName" min="-2" pref="76" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="MakeCallDescritpion" min="-2" pref="60" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="SubmitCall" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="AlarmName" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="AlarmType" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="AlarmLocation" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="CreateAlarm" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                               <Component id="jScrollPane5" min="-2" pref="138" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="AlarmNumberVerify" min="-2" max="-2" attributes="0"/>
-                          <Component id="jToggleButton1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="SubmitCall" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="AlarmNumberVerify" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jToggleButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="4915" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="AlarmWindow" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="5006" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -163,29 +148,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SubmitCallActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="AlarmName">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Alarm Name"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="AlarmType">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Alarm Type"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="AlarmLocation">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Location"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="CreateAlarm">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Create Alarm"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CreateAlarmActionPerformed"/>
               </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane5">
@@ -247,6 +209,14 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton1ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="AlarmWindow">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Create Alarm"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AlarmWindowActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -685,9 +655,9 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                              <Component id="SearchLocation" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                              <Component id="Reset" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -723,8 +693,8 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="SearchButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SearchLocation" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Reset" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -832,21 +802,21 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton4">
+            <Component class="javax.swing.JButton" name="SearchLocation">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Search"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchLocationActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton5">
+            <Component class="javax.swing.JButton" name="Reset">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Reset"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ResetActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="FinalAssignment">
@@ -921,16 +891,15 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="38" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jScrollPane2" min="-2" pref="636" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="346" max="-2" attributes="0"/>
                               <Component id="AssignmentPK" min="-2" pref="210" max="-2" attributes="0"/>
-                              <EmptySpace pref="35" max="32767" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="Verify" min="-2" pref="92" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                               <Component id="CompleteUpdate" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jScrollPane2" min="-2" pref="557" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
@@ -946,6 +915,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="AssignmentPK" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="CompleteUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Verify" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="4884" max="32767" attributes="0"/>
                   </Group>
@@ -960,15 +930,15 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable1">
+                <Component class="javax.swing.JTable" name="AssigmentStatusTable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="5" rowCount="0">
-                        <Column editable="false" title="Assignment" type="java.lang.Object"/>
                         <Column editable="true" title="Assignment Number" type="java.lang.Object"/>
+                        <Column editable="false" title="Officer Name" type="java.lang.Object"/>
+                        <Column editable="true" title="Badge" type="java.lang.Object"/>
                         <Column editable="true" title="Incident Report" type="java.lang.Object"/>
                         <Column editable="true" title="Status" type="java.lang.Object"/>
-                        <Column editable="true" title="Incident Report" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -1009,7 +979,7 @@
             </Container>
             <Component class="javax.swing.JTextField" name="AssignmentPK">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Assignment #"/>
+                <Property name="text" type="java.lang.String" value="Assignment Name"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="CompleteUpdate">
@@ -1019,6 +989,11 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CompleteUpdateActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Verify">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Incident #"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
