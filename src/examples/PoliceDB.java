@@ -33,6 +33,7 @@ public class PoliceDB extends javax.swing.JFrame {
             //  SQLConnections.getConnection();
             // SQLConnections.RetrieveInformaiton();
             Select_MainSchedule.BusInformation();
+            Select_Stop.StopInformation();
             Refresh();
         } catch (Exception ex) {
             Logger.getLogger(PoliceDB.class.getName()).log(Level.SEVERE, null, ex);
@@ -51,6 +52,7 @@ public class PoliceDB extends javax.swing.JFrame {
 //        updateIncidentReport();
 //        CallerTable();
         AlarmTableGrid();
+        StopTableDisplay();
     }
 
     /**
@@ -152,18 +154,18 @@ public class PoliceDB extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         OperatorFinalPage = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        GetCall = new javax.swing.JButton();
-        callNumberText = new javax.swing.JTextField();
+        Stop_Table = new javax.swing.JTable();
+        Stop_FindStop = new javax.swing.JButton();
+        Stop_Trip = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        Stop_Clear = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
-        callNumberText1 = new javax.swing.JTextField();
+        Stop_StopNumber = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
-        callNumberText2 = new javax.swing.JTextField();
+        Stop_Sequence = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
-        callNumberText3 = new javax.swing.JTextField();
+        Stop_DrivingTime = new javax.swing.JTextField();
         Dispatcher = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
@@ -890,31 +892,31 @@ public class PoliceDB extends javax.swing.JFrame {
 
         Home.addTab("Main Schedule", MakeCall);
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        Stop_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Stop Number", "Stop Address"
+                "Trip Number", "Stop Address", "Sequence Number", "Driving Time"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(Stop_Table);
 
-        GetCall.setText("Get Stops");
-        GetCall.addActionListener(new java.awt.event.ActionListener() {
+        Stop_FindStop.setText("Get Stops");
+        Stop_FindStop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GetCallActionPerformed(evt);
+                Stop_FindStopActionPerformed(evt);
             }
         });
 
@@ -927,10 +929,10 @@ public class PoliceDB extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setText("Clear");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        Stop_Clear.setText("Clear");
+        Stop_Clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                Stop_ClearActionPerformed(evt);
             }
         });
 
@@ -949,19 +951,19 @@ public class PoliceDB extends javax.swing.JFrame {
                 .addGap(0, 90, Short.MAX_VALUE)
                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(callNumberText, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Stop_Trip, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(callNumberText1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Stop_StopNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(jLabel27)
                 .addGap(18, 18, 18)
-                .addComponent(callNumberText2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Stop_Sequence, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel28)
                 .addGap(18, 18, 18)
-                .addComponent(callNumberText3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Stop_DrivingTime, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
             .addGroup(OperatorFinalPageLayout.createSequentialGroup()
                 .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -969,10 +971,10 @@ public class PoliceDB extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jButton4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6))
+                        .addComponent(Stop_Clear))
                     .addGroup(OperatorFinalPageLayout.createSequentialGroup()
                         .addGap(412, 412, 412)
-                        .addComponent(GetCall)))
+                        .addComponent(Stop_FindStop)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         OperatorFinalPageLayout.setVerticalGroup(
@@ -980,19 +982,19 @@ public class PoliceDB extends javax.swing.JFrame {
             .addGroup(OperatorFinalPageLayout.createSequentialGroup()
                 .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
-                    .addComponent(jButton6))
+                    .addComponent(Stop_Clear))
                 .addGap(18, 18, 18)
                 .addGroup(OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(callNumberText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Stop_Trip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26)
-                    .addComponent(callNumberText1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Stop_StopNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel27)
-                    .addComponent(callNumberText2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Stop_Sequence, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel28)
-                    .addComponent(callNumberText3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Stop_DrivingTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(GetCall)
+                .addComponent(Stop_FindStop)
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(84, Short.MAX_VALUE))
@@ -1442,14 +1444,14 @@ public class PoliceDB extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void GetCallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GetCallActionPerformed
-        int id = Integer.parseInt(callNumberText.getText().trim());
-        UpdateSQL.CallStatus(id);
-        SQLConnections.callerInformaiton();
-         CallerTable();
-        GetCall(id);
+    private void Stop_FindStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stop_FindStopActionPerformed
+        String tripNumber = Stop_Trip.getText().trim();
+        String stopNumber = Stop_StopNumber.getText().trim();
+        String sequnceNumber = Stop_Sequence.getText().trim();
+        String drivingNumber = Stop_DrivingTime.getText().trim();
+        UpdateStopTable(tripNumber, stopNumber, sequnceNumber, drivingNumber);
         
-    }//GEN-LAST:event_GetCallActionPerformed
+    }//GEN-LAST:event_Stop_FindStopActionPerformed
 
     private void SearchLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchLocationActionPerformed
         DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
@@ -1673,16 +1675,13 @@ AssignmentPK.setText("");
 Verify.setText("");
     }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-         CallerIDsave.setText("");
-      CallerName.setText("");
-        Description.setText("");
-         Location.setText("");
-         IncidentType.setText("");
-        Priority.setText("");
-         PoliceCode.setText("");
-         callNumberText.setText("");
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void Stop_ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stop_ClearActionPerformed
+        Stop_Trip.setText("");
+        Stop_StopNumber.setText("");
+        Stop_Sequence.setText("");
+        Stop_DrivingTime.setText("");
+        StopTableDisplay();       
+    }//GEN-LAST:event_Stop_ClearActionPerformed
 
     private void FinalAssignmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinalAssignmentActionPerformed
         // TODO add your handling code here:
@@ -1732,7 +1731,7 @@ Verify.setText("");
         String description = Search_Destination.getText();
         InsertSQL.InsertCall(name, description);
         SQLConnections.callerInformaiton();
-        CallerTable();
+       // CallerTable();
         SQLConnections.IncidentReportInfo();
         updateIncidentReport();
     }//GEN-LAST:event_SubmitCallActionPerformed
@@ -2000,26 +1999,39 @@ Verify.setText("");
     
     
 
-    public void CallerTable() {
-        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+    public void StopTableDisplay() {
+        DefaultTableModel model = (DefaultTableModel) Stop_Table.getModel();
         // model.getDataVector().removeAllElements();
         model.setRowCount(0);
 
-        for (int i = 0; i < SQLConnections.callerList.size(); i++) {
-            String hold = "hold";
-            //String name = SQLConnections.users.get(i).getName();
-            String name = SQLConnections.callerList.get(i).getName();
-            String status = SQLConnections.callerList.get(i).getDescription();
+        for (int i = 0; i < Select_Stop.stopScheduleList.size(); i++) {
+           String stopNumber = Select_Stop.stopScheduleList.get(i).getStopNumber();
+           String trip = Select_Stop.stopScheduleList.get(i).getTripNumber();
+           String sequence = Select_Stop.stopScheduleList.get(i).getSequnceNumber();
+           String drivingTime = Select_Stop.stopScheduleList.get(i).getDrivingTime();
 
-            if (SQLConnections.callerList.get(i).isHoldStatus()) {
-                hold = "active";
-            }
-            int callerId = SQLConnections.callerList.get(i).getCallerID();
-
-            Object[] row = {callerId, status, hold};
+            Object[] row = {stopNumber, trip, sequence, drivingTime};
             model.addRow(row);
         }
     }
+    
+    public void  UpdateStopTable(String tripNumber, String StopNumber, String SequnceNumber, String  DrivingNumber){
+       DefaultTableModel model = (DefaultTableModel) Stop_Table.getModel();
+        // model.getDataVector().removeAllElements();
+        model.setRowCount(0);
+        for (int i = 0; i < Select_Stop.stopScheduleList.size(); i++) {
+           String trip = Select_Stop.stopScheduleList.get(i).getTripNumber();
+           String stop = Select_Stop.stopScheduleList.get(i).getStopNumber();
+           String sequence = Select_Stop.stopScheduleList.get(i).getSequnceNumber();
+           String driving = Select_Stop.stopScheduleList.get(i).getDrivingTime();
+           if(trip.equals(tripNumber) && stop.equals(StopNumber) && sequence.equals(SequnceNumber) && driving.equals(DrivingNumber)){
+            Object[] row = {stop, trip, sequence, driving};
+            model.addRow(row);
+           }
+           }
+        } 
+    
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -2058,7 +2070,6 @@ Verify.setText("");
     private javax.swing.JTextField EditStatus;
     private javax.swing.JTextField FinalAssignment;
     private javax.swing.JTextField FinalIncidentNumber;
-    private javax.swing.JButton GetCall;
     private javax.swing.JButton GetReport;
     private javax.swing.JTabbedPane Home;
     private javax.swing.JTextField IncidentNameDP;
@@ -2087,21 +2098,23 @@ Verify.setText("");
     private javax.swing.JButton Search_Schedule;
     private javax.swing.JButton SendReport;
     private javax.swing.JButton StartAssigning;
+    private javax.swing.JButton Stop_Clear;
+    private javax.swing.JTextField Stop_DrivingTime;
+    private javax.swing.JButton Stop_FindStop;
+    private javax.swing.JTextField Stop_Sequence;
+    private javax.swing.JTextField Stop_StopNumber;
+    private javax.swing.JTable Stop_Table;
+    private javax.swing.JTextField Stop_Trip;
     private javax.swing.JToggleButton SubmitCall;
     private javax.swing.JTextField UpdateBadgeStatus;
     private javax.swing.JButton UpdateStaus;
     private javax.swing.JTextField Verify;
-    private javax.swing.JTextField callNumberText;
-    private javax.swing.JTextField callNumberText1;
-    private javax.swing.JTextField callNumberText2;
-    private javax.swing.JTextField callNumberText3;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
@@ -2167,7 +2180,6 @@ Verify.setText("");
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton newDispatcher;
