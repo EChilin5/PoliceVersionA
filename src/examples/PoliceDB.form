@@ -1510,7 +1510,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="104" max="32767" attributes="0"/>
+                      <EmptySpace pref="97" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -1519,7 +1519,7 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="118" max="32767" attributes="0"/>
                                   <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                               </Group>
@@ -1571,7 +1571,7 @@
                               <Component id="jScrollPane1" min="-2" pref="201" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel61" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1583,7 +1583,7 @@
                           <Component id="jPanel3" max="32767" attributes="0"/>
                           <Component id="jPanel2" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="91" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="82" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1702,15 +1702,15 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="SearchButton3" pref="118" max="32767" attributes="0"/>
-                              <Component id="SearchButton2" max="32767" attributes="0"/>
+                              <Component id="add_Phone" pref="118" max="32767" attributes="0"/>
+                              <Component id="add_DriverName" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace pref="79" max="32767" attributes="0"/>
-                              <Component id="SearchLocation2" min="-2" pref="119" max="-2" attributes="0"/>
+                              <Component id="AddDriver_Button" min="-2" pref="119" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1721,12 +1721,12 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="SearchButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="add_DriverName" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="SearchButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="add_Phone" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel54" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -1734,7 +1734,7 @@
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace pref="135" max="32767" attributes="0"/>
-                              <Component id="SearchLocation2" min="-2" max="-2" attributes="0"/>
+                              <Component id="AddDriver_Button" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1747,12 +1747,12 @@
                     <Property name="text" type="java.lang.String" value="Name"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="SearchButton2">
+                <Component class="javax.swing.JTextField" name="add_DriverName">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButton2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_DriverNameActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel54">
@@ -1760,21 +1760,21 @@
                     <Property name="text" type="java.lang.String" value="Phone Number"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="SearchButton3">
+                <Component class="javax.swing.JTextField" name="add_Phone">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButton3ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_PhoneActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="SearchLocation2">
+                <Component class="javax.swing.JButton" name="AddDriver_Button">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Add"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchLocation2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddDriver_ButtonActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -1807,22 +1807,22 @@
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="SearchButton5" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="SearchButton4" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
+                                      <Component id="add_Model" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="add_BusID" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                                   <Component id="jLabel63" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="SearchButton10" min="-2" pref="117" max="-2" attributes="0"/>
+                                  <Component id="add_Year" min="-2" pref="117" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="38" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="SearchLocation1" min="-2" pref="119" max="-2" attributes="0"/>
+                          <Component id="AddBus_Driver" min="-2" pref="119" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1832,21 +1832,21 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="SearchButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="add_BusID" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel55" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="SearchButton5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="add_Model" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel56" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="SearchButton10" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="add_Year" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel63" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="SearchLocation1" min="-2" max="-2" attributes="0"/>
+                          <Component id="AddBus_Driver" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="15" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1858,12 +1858,12 @@
                     <Property name="text" type="java.lang.String" value="Bus ID"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="SearchButton4">
+                <Component class="javax.swing.JTextField" name="add_BusID">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButton4ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_BusIDActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel56">
@@ -1871,20 +1871,20 @@
                     <Property name="text" type="java.lang.String" value="Model"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="SearchButton5">
+                <Component class="javax.swing.JTextField" name="add_Model">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButton5ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_ModelActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="SearchButton10">
+                <Component class="javax.swing.JTextField" name="add_Year">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButton10ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_YearActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel63">
@@ -1892,13 +1892,13 @@
                     <Property name="text" type="java.lang.String" value="Year"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="SearchLocation1">
+                <Component class="javax.swing.JButton" name="AddBus_Driver">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Add"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchLocation1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddBus_DriverActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -1946,7 +1946,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="SearchLocation3" min="-2" pref="119" max="-2" attributes="0"/>
+                                      <Component id="DeleteBus_Button" min="-2" pref="119" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
                                           <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -1978,7 +1978,7 @@
                               <Component id="jLabel64" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="SearchLocation3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DeleteBus_Button" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -2024,13 +2024,13 @@
                     <Property name="text" type="java.lang.String" value="Year"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="SearchLocation3">
+                <Component class="javax.swing.JButton" name="DeleteBus_Button">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Delete"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchLocation3ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteBus_ButtonActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
