@@ -181,6 +181,42 @@ public class PoliceDB extends javax.swing.JFrame {
         Stop_Sequence = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         Stop_DrivingTime = new javax.swing.JTextField();
+        Officer = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        WeeklyScheduleTable = new javax.swing.JTable();
+        SearchButton = new javax.swing.JTextField();
+        SearchLocation = new javax.swing.JButton();
+        Reset = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
+        SearchButton1 = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        SearchButton2 = new javax.swing.JTextField();
+        jLabel54 = new javax.swing.JLabel();
+        SearchButton3 = new javax.swing.JTextField();
+        SearchLocation2 = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel55 = new javax.swing.JLabel();
+        SearchButton4 = new javax.swing.JTextField();
+        jLabel56 = new javax.swing.JLabel();
+        SearchButton5 = new javax.swing.JTextField();
+        SearchButton10 = new javax.swing.JTextField();
+        jLabel63 = new javax.swing.JLabel();
+        SearchLocation1 = new javax.swing.JButton();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel59 = new javax.swing.JLabel();
+        SearchButton8 = new javax.swing.JTextField();
+        jLabel60 = new javax.swing.JLabel();
+        SearchButton9 = new javax.swing.JTextField();
+        SearchButton11 = new javax.swing.JTextField();
+        jLabel64 = new javax.swing.JLabel();
+        SearchLocation3 = new javax.swing.JButton();
         Dispatcher = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
@@ -1092,7 +1128,7 @@ public class PoliceDB extends javax.swing.JFrame {
 
         jLabel1.setText("Date");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        WeeklyScheduleTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1108,7 +1144,7 @@ public class PoliceDB extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable2);
+        jScrollPane1.setViewportView(WeeklyScheduleTable);
 
         SearchButton.setToolTipText("");
         SearchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1754,7 +1790,7 @@ public class PoliceDB extends javax.swing.JFrame {
     }//GEN-LAST:event_Stop_FindStopActionPerformed
 
     private void SearchLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchLocationActionPerformed
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        DefaultTableModel model = (DefaultTableModel) WeeklyScheduleTable.getModel();
         model.getDataVector().removeAllElements();
         for (int i = 0; i < SQLConnections.officersList.size(); i++) {
             if (SearchButton.getText().equals(SQLConnections.officersList.get(i).getLocation())) {
@@ -1774,7 +1810,7 @@ public class PoliceDB extends javax.swing.JFrame {
     }//GEN-LAST:event_SearchLocationActionPerformed
 
     private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        DefaultTableModel model = (DefaultTableModel) WeeklyScheduleTable.getModel();
         for (int i = 0; i < SQLConnections.officersList.size(); i++) {
             if (SearchButton.getText().equals(SQLConnections.officersList.get(i).getLocation())) {
                 String name = SQLConnections.officersList.get(i).getName();
@@ -2274,7 +2310,7 @@ Verify.setText("");
 
     public void OfficerTable() {
 
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        DefaultTableModel model = (DefaultTableModel) WeeklyScheduleTable.getModel();
         model.setRowCount(0);
         for (int i = 0; i < SQLConnections.officersList.size(); i++) {
             String name = SQLConnections.officersList.get(i).getName();
@@ -2479,6 +2515,7 @@ Verify.setText("");
     private javax.swing.JTextField UpdateBadgeStatus;
     private javax.swing.JButton UpdateStaus;
     private javax.swing.JTextField Verify;
+    private javax.swing.JTable WeeklyScheduleTable;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
@@ -2566,7 +2603,6 @@ Verify.setText("");
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable4;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton newDispatcher;
