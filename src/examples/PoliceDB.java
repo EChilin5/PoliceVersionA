@@ -34,6 +34,9 @@ public class PoliceDB extends javax.swing.JFrame {
             // SQLConnections.RetrieveInformaiton();
             Select_MainSchedule.BusInformation();
             Select_Stop.StopInformation();
+            Select_Driver.DriverTableInformation();
+            Select_Complete_DriverTable.DriverCompleteTableInformation();
+            Select_Complete_BusTable.BusCompleteTableInformation();
             Refresh();
         } catch (Exception ex) {
             Logger.getLogger(PoliceDB.class.getName()).log(Level.SEVERE, null, ex);
@@ -53,6 +56,9 @@ public class PoliceDB extends javax.swing.JFrame {
 //        CallerTable();
         AlarmTableGrid();
         StopTableDisplay();
+        DriverTableDisplay();
+        BusTableDisplay();
+        DriverCompleteTableDisplay();
     }
 
     /**
@@ -185,28 +191,28 @@ public class PoliceDB extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         WeeklyScheduleTable = new javax.swing.JTable();
-        SearchButton = new javax.swing.JTextField();
-        SearchLocation = new javax.swing.JButton();
+        Weekly_Driver = new javax.swing.JTextField();
+        SearchWeekSchedule = new javax.swing.JButton();
         Reset = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
-        SearchButton1 = new javax.swing.JTextField();
+        Weekly_Date = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
-        SearchButton2 = new javax.swing.JTextField();
+        add_DriverName = new javax.swing.JTextField();
         jLabel54 = new javax.swing.JLabel();
-        SearchButton3 = new javax.swing.JTextField();
-        SearchLocation2 = new javax.swing.JButton();
+        add_Phone = new javax.swing.JTextField();
+        AddDriver_Button = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel55 = new javax.swing.JLabel();
-        SearchButton4 = new javax.swing.JTextField();
+        add_BusID = new javax.swing.JTextField();
         jLabel56 = new javax.swing.JLabel();
-        SearchButton5 = new javax.swing.JTextField();
-        SearchButton10 = new javax.swing.JTextField();
+        add_Model = new javax.swing.JTextField();
+        add_Year = new javax.swing.JTextField();
         jLabel63 = new javax.swing.JLabel();
-        SearchLocation1 = new javax.swing.JButton();
+        AddBus_Driver = new javax.swing.JButton();
         jLabel61 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
@@ -216,7 +222,11 @@ public class PoliceDB extends javax.swing.JFrame {
         SearchButton9 = new javax.swing.JTextField();
         SearchButton11 = new javax.swing.JTextField();
         jLabel64 = new javax.swing.JLabel();
-        SearchLocation3 = new javax.swing.JButton();
+        DeleteBus_Button = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        DriverTable = new javax.swing.JTable();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        BusTable = new javax.swing.JTable();
         Dispatcher = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
@@ -985,7 +995,7 @@ public class PoliceDB extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 51, Short.MAX_VALUE)))
+                                .addGap(0, 193, Short.MAX_VALUE)))
                         .addContainerGap())))
         );
         MakeCallLayout.setVerticalGroup(
@@ -1069,7 +1079,7 @@ public class PoliceDB extends javax.swing.JFrame {
             OperatorFinalPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OperatorFinalPageLayout.createSequentialGroup()
-                .addGap(0, 112, Short.MAX_VALUE)
+                .addGap(0, 254, Short.MAX_VALUE)
                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Stop_Trip, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1118,7 +1128,7 @@ public class PoliceDB extends javax.swing.JFrame {
                 .addComponent(Stop_FindStop)
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
 
         Home.addTab("Stops", OperatorFinalPage);
@@ -1146,18 +1156,18 @@ public class PoliceDB extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(WeeklyScheduleTable);
 
-        SearchButton.setToolTipText("");
-        SearchButton.addActionListener(new java.awt.event.ActionListener() {
+        Weekly_Driver.setToolTipText("");
+        Weekly_Driver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchButtonActionPerformed(evt);
+                Weekly_DriverActionPerformed(evt);
             }
         });
 
-        SearchLocation.setText("Search");
-        SearchLocation.setToolTipText("");
-        SearchLocation.addActionListener(new java.awt.event.ActionListener() {
+        SearchWeekSchedule.setText("Search");
+        SearchWeekSchedule.setToolTipText("");
+        SearchWeekSchedule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchLocationActionPerformed(evt);
+                SearchWeekScheduleActionPerformed(evt);
             }
         });
 
@@ -1184,10 +1194,10 @@ public class PoliceDB extends javax.swing.JFrame {
 
         jLabel29.setText("Driver");
 
-        SearchButton1.setToolTipText("");
-        SearchButton1.addActionListener(new java.awt.event.ActionListener() {
+        Weekly_Date.setToolTipText("");
+        Weekly_Date.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchButton1ActionPerformed(evt);
+                Weekly_DateActionPerformed(evt);
             }
         });
 
@@ -1195,27 +1205,27 @@ public class PoliceDB extends javax.swing.JFrame {
 
         jLabel30.setText("Name");
 
-        SearchButton2.setToolTipText("");
-        SearchButton2.addActionListener(new java.awt.event.ActionListener() {
+        add_DriverName.setToolTipText("");
+        add_DriverName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchButton2ActionPerformed(evt);
+                add_DriverNameActionPerformed(evt);
             }
         });
 
         jLabel54.setText("Phone Number");
 
-        SearchButton3.setToolTipText("");
-        SearchButton3.addActionListener(new java.awt.event.ActionListener() {
+        add_Phone.setToolTipText("");
+        add_Phone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchButton3ActionPerformed(evt);
+                add_PhoneActionPerformed(evt);
             }
         });
 
-        SearchLocation2.setText("Add");
-        SearchLocation2.setToolTipText("");
-        SearchLocation2.addActionListener(new java.awt.event.ActionListener() {
+        AddDriver_Button.setText("Add");
+        AddDriver_Button.setToolTipText("");
+        AddDriver_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchLocation2ActionPerformed(evt);
+                AddDriver_ButtonActionPerformed(evt);
             }
         });
 
@@ -1230,13 +1240,13 @@ public class PoliceDB extends javax.swing.JFrame {
                     .addComponent(jLabel30))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(SearchButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                    .addComponent(SearchButton2))
+                    .addComponent(add_Phone, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                    .addComponent(add_DriverName))
                 .addGap(38, 38, 38))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                     .addContainerGap(79, Short.MAX_VALUE)
-                    .addComponent(SearchLocation2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddDriver_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(73, 73, 73)))
         );
         jPanel2Layout.setVerticalGroup(
@@ -1244,17 +1254,17 @@ public class PoliceDB extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SearchButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(add_DriverName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel30))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SearchButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(add_Phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel54))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                     .addContainerGap(135, Short.MAX_VALUE)
-                    .addComponent(SearchLocation2)
+                    .addComponent(AddDriver_Button)
                     .addGap(16, 16, 16)))
         );
 
@@ -1265,36 +1275,36 @@ public class PoliceDB extends javax.swing.JFrame {
 
         jLabel55.setText("Bus ID");
 
-        SearchButton4.setToolTipText("");
-        SearchButton4.addActionListener(new java.awt.event.ActionListener() {
+        add_BusID.setToolTipText("");
+        add_BusID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchButton4ActionPerformed(evt);
+                add_BusIDActionPerformed(evt);
             }
         });
 
         jLabel56.setText("Model");
 
-        SearchButton5.setToolTipText("");
-        SearchButton5.addActionListener(new java.awt.event.ActionListener() {
+        add_Model.setToolTipText("");
+        add_Model.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchButton5ActionPerformed(evt);
+                add_ModelActionPerformed(evt);
             }
         });
 
-        SearchButton10.setToolTipText("");
-        SearchButton10.addActionListener(new java.awt.event.ActionListener() {
+        add_Year.setToolTipText("");
+        add_Year.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchButton10ActionPerformed(evt);
+                add_YearActionPerformed(evt);
             }
         });
 
         jLabel63.setText("Year");
 
-        SearchLocation1.setText("Add");
-        SearchLocation1.setToolTipText("");
-        SearchLocation1.addActionListener(new java.awt.event.ActionListener() {
+        AddBus_Driver.setText("Add");
+        AddBus_Driver.setToolTipText("");
+        AddBus_Driver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchLocation1ActionPerformed(evt);
+                AddBus_DriverActionPerformed(evt);
             }
         });
 
@@ -1303,44 +1313,43 @@ public class PoliceDB extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel56)
                             .addComponent(jLabel55))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(SearchButton5)
-                            .addComponent(SearchButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                            .addComponent(add_Model)
+                            .addComponent(add_BusID, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(36, 36, 36)
-                        .addComponent(jLabel63)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(SearchButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(AddBus_Driver, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel63)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(add_Year, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(38, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(SearchLocation1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SearchButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(add_BusID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel55))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SearchButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(add_Model, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel56))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SearchButton10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(add_Year, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel63))
                 .addGap(18, 18, 18)
-                .addComponent(SearchLocation1)
+                .addComponent(AddBus_Driver)
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -1379,11 +1388,11 @@ public class PoliceDB extends javax.swing.JFrame {
 
         jLabel64.setText("Year");
 
-        SearchLocation3.setText("Delete");
-        SearchLocation3.setToolTipText("");
-        SearchLocation3.addActionListener(new java.awt.event.ActionListener() {
+        DeleteBus_Button.setText("Delete");
+        DeleteBus_Button.setToolTipText("");
+        DeleteBus_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchLocation3ActionPerformed(evt);
+                DeleteBus_ButtonActionPerformed(evt);
             }
         });
 
@@ -1405,7 +1414,7 @@ public class PoliceDB extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(SearchLocation3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DeleteBus_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addComponent(jLabel64)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1428,57 +1437,102 @@ public class PoliceDB extends javax.swing.JFrame {
                     .addComponent(SearchButton11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel64))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(SearchLocation3)
+                .addComponent(DeleteBus_Button)
                 .addContainerGap())
         );
+
+        DriverTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Driver Name", "Phone Number"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(DriverTable);
+
+        BusTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Bus ID", "Model", "Year"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane7.setViewportView(BusTable);
 
         javax.swing.GroupLayout OfficerLayout = new javax.swing.GroupLayout(Officer);
         Officer.setLayout(OfficerLayout);
         OfficerLayout.setHorizontalGroup(
             OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OfficerLayout.createSequentialGroup()
+            .addGroup(OfficerLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(OfficerLayout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(jLabel29)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(SearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OfficerLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(OfficerLayout.createSequentialGroup()
+                                .addGap(85, 85, 85)
+                                .addComponent(jLabel29)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Weekly_Driver, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OfficerLayout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
-                                .addComponent(SearchButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Weekly_Date, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OfficerLayout.createSequentialGroup()
                                 .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel20)
-                                    .addComponent(SearchLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(SearchWeekSchedule, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
-                .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(OfficerLayout.createSequentialGroup()
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(48, 48, 48))
-                        .addGroup(OfficerLayout.createSequentialGroup()
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(60, 60, 60)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(98, 98, 98)
+                        .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, OfficerLayout.createSequentialGroup()
+                                .addGap(74, 74, 74)
+                                .addComponent(jLabel62))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, OfficerLayout.createSequentialGroup()
+                                .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(OfficerLayout.createSequentialGroup()
+                                        .addGap(56, 56, 56)
+                                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OfficerLayout.createSequentialGroup()
+                                        .addGap(107, 107, 107)
+                                        .addComponent(jLabel61)
+                                        .addGap(151, 151, 151))))))
                     .addGroup(OfficerLayout.createSequentialGroup()
-                        .addComponent(jLabel62)
-                        .addGap(263, 263, 263)
-                        .addComponent(jLabel61)
-                        .addGap(123, 123, 123))))
-            .addGroup(OfficerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton8)))
+                .addContainerGap(190, Short.MAX_VALUE))
         );
         OfficerLayout.setVerticalGroup(
             OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1490,30 +1544,42 @@ public class PoliceDB extends javax.swing.JFrame {
                     .addGroup(OfficerLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(SearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Weekly_Driver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel29))
                         .addGap(18, 18, 18)
                         .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(SearchButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Weekly_Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))
                         .addGap(18, 18, 18)
                         .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Reset)
-                            .addComponent(SearchLocation)))
+                            .addComponent(SearchWeekSchedule)))
                     .addGroup(OfficerLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(98, 98, 98)
+                .addGap(35, 35, 35)
                 .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
-                    .addComponent(jLabel61)
                     .addComponent(jLabel62))
-                .addGap(12, 12, 12)
-                .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 91, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(OfficerLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OfficerLayout.createSequentialGroup()
+                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OfficerLayout.createSequentialGroup()
+                                .addComponent(jLabel61)
+                                .addGap(14, 14, 14)))
+                        .addGroup(OfficerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(OfficerLayout.createSequentialGroup()
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
 
         Home.addTab("Weekly Schedule", Officer);
@@ -1593,7 +1659,7 @@ public class PoliceDB extends javax.swing.JFrame {
             .addGroup(DispatcherLayout.createSequentialGroup()
                 .addGroup(DispatcherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(DispatcherLayout.createSequentialGroup()
-                        .addContainerGap(264, Short.MAX_VALUE)
+                        .addContainerGap(406, Short.MAX_VALUE)
                         .addGroup(DispatcherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DispatcherLayout.createSequentialGroup()
                                 .addComponent(jLabel17)
@@ -1765,13 +1831,13 @@ public class PoliceDB extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Home, javax.swing.GroupLayout.DEFAULT_SIZE, 1046, Short.MAX_VALUE)
+            .addComponent(Home, javax.swing.GroupLayout.DEFAULT_SIZE, 1188, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Home, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
+                .addComponent(Home, javax.swing.GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1788,45 +1854,6 @@ public class PoliceDB extends javax.swing.JFrame {
         UpdateStopTable(tripNumber, stopNumber, sequnceNumber, drivingNumber);
         
     }//GEN-LAST:event_Stop_FindStopActionPerformed
-
-    private void SearchLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchLocationActionPerformed
-        DefaultTableModel model = (DefaultTableModel) WeeklyScheduleTable.getModel();
-        model.getDataVector().removeAllElements();
-        for (int i = 0; i < SQLConnections.officersList.size(); i++) {
-            if (SearchButton.getText().equals(SQLConnections.officersList.get(i).getLocation())) {
-                String name = SQLConnections.officersList.get(i).getName();
-                String status = SQLConnections.officersList.get(i).getStatus();
-                String officerType = SQLConnections.officersList.get(i).getOfficerType();
-                String position = SQLConnections.officersList.get(i).getPosition();
-                String location = SQLConnections.officersList.get(i).getLocation();
-                int badgeNumber = SQLConnections.officersList.get(i).getBadgeNumber();
-                int carNumber = SQLConnections.officersList.get(i).getCarNumber();
-                Object[] tablerow = {Integer.toString(badgeNumber), name, status, officerType,
-                    position, location,
-                    Integer.toString(carNumber)};
-                model.addRow(tablerow);
-            }
-        }
-    }//GEN-LAST:event_SearchLocationActionPerformed
-
-    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
-        DefaultTableModel model = (DefaultTableModel) WeeklyScheduleTable.getModel();
-        for (int i = 0; i < SQLConnections.officersList.size(); i++) {
-            if (SearchButton.getText().equals(SQLConnections.officersList.get(i).getLocation())) {
-                String name = SQLConnections.officersList.get(i).getName();
-                String status = SQLConnections.officersList.get(i).getStatus();
-                String officerType = SQLConnections.officersList.get(i).getOfficerType();
-                String position = SQLConnections.officersList.get(i).getPosition();
-                String location = SQLConnections.officersList.get(i).getLocation();
-                int badgeNumber = SQLConnections.officersList.get(i).getBadgeNumber();
-                int carNumber = SQLConnections.officersList.get(i).getCarNumber();
-                Object[] tablerow = {Integer.toString(badgeNumber), name, status, officerType,
-                    position, location,
-                    Integer.toString(carNumber)};
-                model.addRow(tablerow);
-            }
-        }
-    }//GEN-LAST:event_SearchButtonActionPerformed
 
     private void GetCall(int id) {
         try {
@@ -1878,10 +1905,6 @@ public class PoliceDB extends javax.swing.JFrame {
     }
 
 
-    private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
-        OfficerTable();
-    }//GEN-LAST:event_ResetActionPerformed
-
     private void IncidentNameDPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IncidentNameDPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_IncidentNameDPActionPerformed
@@ -1918,7 +1941,7 @@ public class PoliceDB extends javax.swing.JFrame {
         String Location = DispatcherLocation.getText();
         FinalAssignment.setText(name);
         FinalIncidentNumber.setText(Number);
-        SearchButton.setText(Location);
+        Weekly_Driver.setText(Location);
     }//GEN-LAST:event_StartAssigningActionPerformed
 
     private void CompleteAssignmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompleteAssignmentActionPerformed
@@ -1978,10 +2001,6 @@ public class PoliceDB extends javax.swing.JFrame {
         Refresh();
     }//GEN-LAST:event_RefreshActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Refresh();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         Refresh();
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -1996,15 +2015,6 @@ public class PoliceDB extends javax.swing.JFrame {
        IncidentNumberDP.setText("");
        DispatcherLocation.setText("");
     }//GEN-LAST:event_ClearDpActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        SearchButton.setText("");
-        UpdateBadgeStatus.setText("");
-          FinalAssignment.setText("");
-        FinalIncidentNumber.setText("");
-        EditStatus.setText("");
-        
-    }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
 AssignmentPK.setText("");
@@ -2187,26 +2197,6 @@ Verify.setText("");
         AlarmTableGrid();
     }//GEN-LAST:event_Schedule_ChangeBusActionPerformed
 
-    private void SearchButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SearchButton1ActionPerformed
-
-    private void SearchButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SearchButton2ActionPerformed
-
-    private void SearchButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SearchButton3ActionPerformed
-
-    private void SearchButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SearchButton4ActionPerformed
-
-    private void SearchButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SearchButton5ActionPerformed
-
     private void SearchButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SearchButton6ActionPerformed
@@ -2215,33 +2205,86 @@ Verify.setText("");
         // TODO add your handling code here:
     }//GEN-LAST:event_SearchButton7ActionPerformed
 
-    private void SearchButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButton10ActionPerformed
+    private void DeleteBus_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBus_ButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SearchButton10ActionPerformed
-
-    private void SearchButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SearchButton8ActionPerformed
-
-    private void SearchButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SearchButton9ActionPerformed
+    }//GEN-LAST:event_DeleteBus_ButtonActionPerformed
 
     private void SearchButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButton11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SearchButton11ActionPerformed
 
-    private void SearchLocation1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchLocation1ActionPerformed
+    private void SearchButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButton9ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SearchLocation1ActionPerformed
+    }//GEN-LAST:event_SearchButton9ActionPerformed
 
-    private void SearchLocation2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchLocation2ActionPerformed
+    private void SearchButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButton8ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SearchLocation2ActionPerformed
+    }//GEN-LAST:event_SearchButton8ActionPerformed
 
-    private void SearchLocation3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchLocation3ActionPerformed
+    private void AddBus_DriverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBus_DriverActionPerformed
+        String busID = add_BusID.getText();
+        String model = add_Model.getText();
+        String year  = add_Year.getText();
+        Insert_Bus.InsertBusTable(Integer.parseInt(busID), model, year);
+    }//GEN-LAST:event_AddBus_DriverActionPerformed
+
+    private void add_YearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_YearActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SearchLocation3ActionPerformed
+    }//GEN-LAST:event_add_YearActionPerformed
+
+    private void add_ModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_ModelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_ModelActionPerformed
+
+    private void add_BusIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_BusIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_BusIDActionPerformed
+
+    private void AddDriver_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddDriver_ButtonActionPerformed
+        String driver = add_DriverName.getText();
+        String phone = add_Phone.getText();
+        Insert_Driver.InsertDriverTable(driver, phone);
+
+    }//GEN-LAST:event_AddDriver_ButtonActionPerformed
+
+    private void add_PhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_PhoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_PhoneActionPerformed
+
+    private void add_DriverNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_DriverNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_DriverNameActionPerformed
+
+    private void Weekly_DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Weekly_DateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Weekly_DateActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        Weekly_Driver.setText("");
+        UpdateBadgeStatus.setText("");
+        FinalAssignment.setText("");
+        FinalIncidentNumber.setText("");
+        EditStatus.setText("");
+
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Refresh();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
+        DriverTableDisplay();
+
+    }//GEN-LAST:event_ResetActionPerformed
+
+    private void SearchWeekScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchWeekScheduleActionPerformed
+       String DriverName = Weekly_Driver.getText();
+       UpdateWeeklySchedule(DriverName);
+    }//GEN-LAST:event_SearchWeekScheduleActionPerformed
+
+    private void Weekly_DriverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Weekly_DriverActionPerformed
+       
+    }//GEN-LAST:event_Weekly_DriverActionPerformed
 
     private void Insert() {
 
@@ -2389,7 +2432,33 @@ Verify.setText("");
         }
     }
     
+    public void DriverTableDisplay(){
+         DefaultTableModel model = (DefaultTableModel) WeeklyScheduleTable.getModel();
+        // model.getDataVector().removeAllElements();
+        model.setRowCount(0);
+
+        for (int i = 0; i < Select_Driver.driverScheduleList.size(); i++) {
+           String driver = Select_Driver.driverScheduleList.get(i).getDriver();
+           String date = Select_Driver.driverScheduleList.get(i).getDate();
+            Object[] row = {driver, date};
+            model.addRow(row);
+        }
+    }
     
+    public void UpdateWeeklySchedule(String DriverName){
+         DefaultTableModel model = (DefaultTableModel) WeeklyScheduleTable.getModel();
+        // model.getDataVector().removeAllElements();
+        model.setRowCount(0);
+
+        for (int i = 0; i < Select_Driver.driverScheduleList.size(); i++) {
+           String driver = Select_Driver.driverScheduleList.get(i).getDriver();
+           if(driver.equals(DriverName)){
+           String date = Select_Driver.driverScheduleList.get(i).getDate();
+            Object[] row = {driver, date};
+            model.addRow(row);
+           }
+        }
+    }
 
     public void StopTableDisplay() {
         DefaultTableModel model = (DefaultTableModel) Stop_Table.getModel();
@@ -2422,11 +2491,40 @@ Verify.setText("");
            }
            }
         } 
-    
+    public void BusTableDisplay(){
+          DefaultTableModel model = (DefaultTableModel) BusTable.getModel();
+        // model.getDataVector().removeAllElements();
+        model.setRowCount(0);
+
+        for (int i = 0; i < Select_Complete_BusTable.busCompleteList.size(); i++) {
+           String busID = Select_Complete_BusTable.busCompleteList.get(i).getBusID();
+           String BUSModel = Select_Complete_BusTable.busCompleteList.get(i).getModel();
+           String year = Select_Complete_BusTable.busCompleteList.get(i).getYear();
+
+            Object[] row = {busID, BUSModel, year};
+            model.addRow(row);
+        }
+    }
+    public void DriverCompleteTableDisplay(){
+          DefaultTableModel model = (DefaultTableModel) DriverTable.getModel();
+        // model.getDataVector().removeAllElements();
+        model.setRowCount(0);
+
+        for (int i = 0; i < Select_Complete_DriverTable.driverCompleteList.size(); i++) {
+           String driverName = Select_Complete_DriverTable.driverCompleteList.get(i).getDriverName();
+           String phone = Select_Complete_DriverTable.driverCompleteList.get(i).getPhoneNumber();
+
+            Object[] row = {driverName, phone};
+            model.addRow(row);
+        }
+    }
+
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddBus_Driver;
+    private javax.swing.JButton AddDriver_Button;
     private javax.swing.JTextField Add_Arrival;
     private javax.swing.JTextField Add_Bus;
     private javax.swing.JTextField Add_Date;
@@ -2442,6 +2540,7 @@ Verify.setText("");
     private javax.swing.JButton AlarmWindow;
     private javax.swing.JTable AssigmentStatusTable;
     private javax.swing.JTextField AssignmentPK;
+    private javax.swing.JTable BusTable;
     private javax.swing.JTextField CallerIDsave;
     private javax.swing.JTextField CallerName;
     private javax.swing.JTextField Change_BusDate;
@@ -2456,9 +2555,11 @@ Verify.setText("");
     private javax.swing.JPanel Complete;
     private javax.swing.JButton CompleteAssignment;
     private javax.swing.JButton CompleteUpdate;
+    private javax.swing.JButton DeleteBus_Button;
     private javax.swing.JTextField Description;
     private javax.swing.JPanel Dispatcher;
     private javax.swing.JTextField DispatcherLocation;
+    private javax.swing.JTable DriverTable;
     private javax.swing.JTextField EditStatus;
     private javax.swing.JTextField FinalAssignment;
     private javax.swing.JTextField FinalIncidentNumber;
@@ -2482,22 +2583,12 @@ Verify.setText("");
     private javax.swing.JButton Reset;
     private javax.swing.JButton Schedule_ChangeBus;
     private javax.swing.JButton Schedule_ChangeDriver;
-    private javax.swing.JTextField SearchButton;
-    private javax.swing.JTextField SearchButton1;
-    private javax.swing.JTextField SearchButton10;
     private javax.swing.JTextField SearchButton11;
-    private javax.swing.JTextField SearchButton2;
-    private javax.swing.JTextField SearchButton3;
-    private javax.swing.JTextField SearchButton4;
-    private javax.swing.JTextField SearchButton5;
     private javax.swing.JTextField SearchButton6;
     private javax.swing.JTextField SearchButton7;
     private javax.swing.JTextField SearchButton8;
     private javax.swing.JTextField SearchButton9;
-    private javax.swing.JButton SearchLocation;
-    private javax.swing.JButton SearchLocation1;
-    private javax.swing.JButton SearchLocation2;
-    private javax.swing.JButton SearchLocation3;
+    private javax.swing.JButton SearchWeekSchedule;
     private javax.swing.JTextField Search_Date;
     private javax.swing.JTextField Search_Destination;
     private javax.swing.JTextField Search_Location;
@@ -2516,6 +2607,13 @@ Verify.setText("");
     private javax.swing.JButton UpdateStaus;
     private javax.swing.JTextField Verify;
     private javax.swing.JTable WeeklyScheduleTable;
+    private javax.swing.JTextField Weekly_Date;
+    private javax.swing.JTextField Weekly_Driver;
+    private javax.swing.JTextField add_BusID;
+    private javax.swing.JTextField add_DriverName;
+    private javax.swing.JTextField add_Model;
+    private javax.swing.JTextField add_Phone;
+    private javax.swing.JTextField add_Year;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
@@ -2603,6 +2701,8 @@ Verify.setText("");
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTable jTable4;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton newDispatcher;

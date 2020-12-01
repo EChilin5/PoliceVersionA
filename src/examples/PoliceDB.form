@@ -279,14 +279,14 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="Home" alignment="0" pref="1046" max="32767" attributes="0"/>
+          <Component id="Home" alignment="0" pref="1188" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="Home" pref="697" max="32767" attributes="0"/>
+              <Component id="Home" pref="779" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -353,7 +353,7 @@
                                           </Group>
                                           <Component id="jLabel22" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="0" pref="51" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="193" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1297,7 +1297,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane3" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="112" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="254" max="32767" attributes="0"/>
                       <Component id="jLabel15" min="-2" pref="97" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Stop_Trip" min="-2" pref="90" max="-2" attributes="0"/>
@@ -1354,7 +1354,7 @@
                       <Component id="Stop_FindStop" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Component id="jScrollPane3" min="-2" pref="375" max="-2" attributes="0"/>
-                      <EmptySpace pref="130" max="32767" attributes="0"/>
+                      <EmptySpace pref="212" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1482,62 +1482,68 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                              <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="SearchButton" min="-2" pref="150" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                                      <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="Weekly_Driver" min="-2" pref="150" max="-2" attributes="0"/>
+                                  </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="SearchButton1" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <Component id="Weekly_Date" min="-2" pref="150" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                                          <Component id="SearchLocation" min="-2" pref="119" max="-2" attributes="0"/>
+                                          <Component id="SearchWeekSchedule" min="-2" pref="119" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="Reset" min="-2" pref="92" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jPanel2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jScrollPane6" alignment="1" pref="0" max="32767" attributes="0"/>
+                                      <Component id="jPanel2" alignment="1" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
+                              <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jScrollPane1" alignment="0" min="-2" pref="588" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                                      <Component id="jLabel62" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="jScrollPane7" pref="0" max="32767" attributes="0"/>
+                                          <Component id="jPanel3" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                              <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+                                              <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton8" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="104" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jScrollPane1" min="-2" pref="588" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel62" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="263" max="-2" attributes="0"/>
-                              <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton8" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="190" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1552,18 +1558,18 @@
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="SearchButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Weekly_Driver" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="SearchButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Weekly_Date" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="Reset" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="SearchLocation" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="SearchWeekSchedule" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -1571,19 +1577,37 @@
                               <Component id="jScrollPane1" min="-2" pref="201" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel61" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel62" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel62" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jPanel9" max="32767" attributes="0"/>
-                          <Component id="jPanel3" max="32767" attributes="0"/>
-                          <Component id="jPanel2" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jScrollPane7" min="-2" pref="121" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jPanel9" max="32767" attributes="0"/>
+                                  <Component id="jPanel3" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jScrollPane6" min="-2" pref="121" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jPanel2" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="0" pref="91" max="32767" attributes="0"/>
+                      <EmptySpace pref="115" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1630,21 +1654,21 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JTextField" name="SearchButton">
+            <Component class="javax.swing.JTextField" name="Weekly_Driver">
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Weekly_DriverActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="SearchLocation">
+            <Component class="javax.swing.JButton" name="SearchWeekSchedule">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Search"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchLocationActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchWeekScheduleActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="Reset">
@@ -1676,12 +1700,12 @@
                 <Property name="text" type="java.lang.String" value="Driver"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="SearchButton1">
+            <Component class="javax.swing.JTextField" name="Weekly_Date">
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButton1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Weekly_DateActionPerformed"/>
               </Events>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel2">
@@ -1702,15 +1726,15 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="SearchButton3" pref="118" max="32767" attributes="0"/>
-                              <Component id="SearchButton2" max="32767" attributes="0"/>
+                              <Component id="add_Phone" pref="118" max="32767" attributes="0"/>
+                              <Component id="add_DriverName" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace pref="79" max="32767" attributes="0"/>
-                              <Component id="SearchLocation2" min="-2" pref="119" max="-2" attributes="0"/>
+                              <Component id="AddDriver_Button" min="-2" pref="119" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1721,12 +1745,12 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="SearchButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="add_DriverName" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="SearchButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="add_Phone" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel54" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -1734,7 +1758,7 @@
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace pref="135" max="32767" attributes="0"/>
-                              <Component id="SearchLocation2" min="-2" max="-2" attributes="0"/>
+                              <Component id="AddDriver_Button" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1747,12 +1771,12 @@
                     <Property name="text" type="java.lang.String" value="Name"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="SearchButton2">
+                <Component class="javax.swing.JTextField" name="add_DriverName">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButton2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_DriverNameActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel54">
@@ -1760,21 +1784,21 @@
                     <Property name="text" type="java.lang.String" value="Phone Number"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="SearchButton3">
+                <Component class="javax.swing.JTextField" name="add_Phone">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButton3ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_PhoneActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="SearchLocation2">
+                <Component class="javax.swing.JButton" name="AddDriver_Button">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Add"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchLocation2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddDriver_ButtonActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -1798,7 +1822,7 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
@@ -1807,23 +1831,23 @@
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="SearchButton5" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="SearchButton4" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
+                                      <Component id="add_Model" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="add_BusID" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Component id="jLabel63" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="SearchButton10" min="-2" pref="117" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="AddBus_Driver" min="-2" pref="119" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel63" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="add_Year" min="-2" pref="117" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                           </Group>
                           <EmptySpace pref="38" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="SearchLocation1" min="-2" pref="119" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1832,21 +1856,21 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="SearchButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="add_BusID" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel55" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="SearchButton5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="add_Model" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel56" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="SearchButton10" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="add_Year" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel63" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="SearchLocation1" min="-2" max="-2" attributes="0"/>
+                          <Component id="AddBus_Driver" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="15" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1858,12 +1882,12 @@
                     <Property name="text" type="java.lang.String" value="Bus ID"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="SearchButton4">
+                <Component class="javax.swing.JTextField" name="add_BusID">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButton4ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_BusIDActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel56">
@@ -1871,20 +1895,20 @@
                     <Property name="text" type="java.lang.String" value="Model"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="SearchButton5">
+                <Component class="javax.swing.JTextField" name="add_Model">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButton5ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_ModelActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="SearchButton10">
+                <Component class="javax.swing.JTextField" name="add_Year">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButton10ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_YearActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel63">
@@ -1892,13 +1916,13 @@
                     <Property name="text" type="java.lang.String" value="Year"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="SearchLocation1">
+                <Component class="javax.swing.JButton" name="AddBus_Driver">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Add"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchLocation1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddBus_DriverActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -1946,7 +1970,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="SearchLocation3" min="-2" pref="119" max="-2" attributes="0"/>
+                                      <Component id="DeleteBus_Button" min="-2" pref="119" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
                                           <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -1978,7 +2002,7 @@
                               <Component id="jLabel64" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="SearchLocation3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DeleteBus_Button" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -2024,14 +2048,92 @@
                     <Property name="text" type="java.lang.String" value="Year"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="SearchLocation3">
+                <Component class="javax.swing.JButton" name="DeleteBus_Button">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Delete"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchLocation3ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteBus_ButtonActionPerformed"/>
                   </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="DriverTable">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="2" rowCount="4">
+                        <Column editable="false" title="Driver Name" type="java.lang.Object"/>
+                        <Column editable="false" title="Phone Number" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane7">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="BusTable">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="3" rowCount="4">
+                        <Column editable="false" title="Bus ID" type="java.lang.Object"/>
+                        <Column editable="false" title="Model" type="java.lang.Object"/>
+                        <Column editable="false" title="Year" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -2052,7 +2154,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace pref="264" max="32767" attributes="0"/>
+                              <EmptySpace pref="406" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
