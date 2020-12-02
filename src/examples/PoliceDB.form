@@ -853,12 +853,12 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                              <Component id="jButton12" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Delete_Schedule" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                              <Component id="MakeCallDescritpion4" min="-2" pref="110" max="-2" attributes="0"/>
+                                              <Component id="Delete_Date" min="-2" pref="110" max="-2" attributes="0"/>
                                               <EmptySpace pref="40" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -870,8 +870,8 @@
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="MakeCallName2" alignment="0" pref="110" max="32767" attributes="0"/>
-                                          <Component id="MakeCallDescritpion5" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="Delete_TripNumber" alignment="0" pref="110" max="32767" attributes="0"/>
+                                          <Component id="Delete_StartTime" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   </Group>
@@ -891,21 +891,21 @@
                           <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="MakeCallName2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Delete_TripNumber" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel32" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="MakeCallDescritpion5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Delete_StartTime" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="MakeCallDescritpion4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Delete_Date" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jButton12" min="-2" max="-2" attributes="0"/>
+                          <Component id="Delete_Schedule" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -944,19 +944,22 @@
                     <Property name="text" type="java.lang.String" value="Date"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="MakeCallDescritpion4">
+                <Component class="javax.swing.JTextField" name="Delete_Date">
                 </Component>
-                <Component class="javax.swing.JTextField" name="MakeCallDescritpion5">
+                <Component class="javax.swing.JTextField" name="Delete_StartTime">
                 </Component>
-                <Component class="javax.swing.JTextField" name="MakeCallName2">
+                <Component class="javax.swing.JTextField" name="Delete_TripNumber">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MakeCallName2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Delete_TripNumberActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton12">
+                <Component class="javax.swing.JButton" name="Delete_Schedule">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Delete"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Delete_ScheduleActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1578,9 +1581,9 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel62" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -1963,8 +1966,8 @@
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="SearchButton9" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="SearchButton8" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
+                                      <Component id="Delete_Model" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Delete_BusID" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -1974,7 +1977,7 @@
                                       <Group type="102" attributes="0">
                                           <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="SearchButton11" min="-2" pref="117" max="-2" attributes="0"/>
+                                          <Component id="Delete_Year" min="-2" pref="117" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -1988,17 +1991,17 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="SearchButton8" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Delete_BusID" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel59" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="SearchButton9" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Delete_Model" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel60" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="SearchButton11" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Delete_Year" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel64" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -2014,12 +2017,12 @@
                     <Property name="text" type="java.lang.String" value="Bus ID"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="SearchButton8">
+                <Component class="javax.swing.JTextField" name="Delete_BusID">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButton8ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Delete_BusIDActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel60">
@@ -2027,20 +2030,20 @@
                     <Property name="text" type="java.lang.String" value="Model"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="SearchButton9">
+                <Component class="javax.swing.JTextField" name="Delete_Model">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButton9ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Delete_ModelActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="SearchButton11">
+                <Component class="javax.swing.JTextField" name="Delete_Year">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButton11ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Delete_YearActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel64">
