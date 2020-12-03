@@ -37,12 +37,7 @@ public class PoliceDB extends javax.swing.JFrame {
         initComponents();
         try {
            
-            Select_MainSchedule.BusInformation();
-            Select_Stop.StopInformation();
-            Select_Driver.DriverTableInformation();
-            Select_Complete_DriverTable.DriverCompleteTableInformation();
-            Select_Complete_BusTable.BusCompleteTableInformation();
-            Selecte_ActualTrip.ActualTripTableInformation();
+            
             Refresh();
         } catch (Exception ex) {
             Logger.getLogger(PoliceDB.class.getName()).log(Level.SEVERE, null, ex);
@@ -50,13 +45,20 @@ public class PoliceDB extends javax.swing.JFrame {
     }
 
     public void Refresh() {
-
+        System.out.println("Fetching Data");
+        Select_MainSchedule.BusInformation();
+        Select_Stop.StopInformation();
+        Select_Driver.DriverTableInformation();
+        Select_Complete_DriverTable.DriverCompleteTableInformation();
+        Select_Complete_BusTable.BusCompleteTableInformation();
+        Selecte_ActualTrip.ActualTripTableInformation();
         MainScheduleTableGrid();
         StopTableDisplay();
         DriverTableDisplay();
         BusTableDisplay();
         DriverCompleteTableDisplay();
         ActualTripTableDisplay();
+        System.out.println("All Data is now Fetched");
     }
 
     /**
@@ -1707,7 +1709,7 @@ public class PoliceDB extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Home.addTab("Delete", Complete);
+        //Home.addTab("Delete", Complete);
 
         ActualTripTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2086,7 +2088,7 @@ public class PoliceDB extends javax.swing.JFrame {
     }//GEN-LAST:event_Add_TripActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        Refresh();
     }//GEN-LAST:event_jButton5ActionPerformed
 // Clear Button on Main Schedule 
     private void Main_ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Main_ClearActionPerformed
@@ -2384,9 +2386,10 @@ public class PoliceDB extends javax.swing.JFrame {
 
     private void SearchWeekScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchWeekScheduleActionPerformed
        String DriverName = Weekly_Driver.getText();
+       String DriverDate = Weekly_Date.getText();
        boolean driverExist = verifyDriver(DriverName);
        if(driverExist){
-       UpdateWeeklySchedule(DriverName);
+       UpdateWeeklySchedule(DriverName, DriverDate);
        }else{
             JOptionPane.showMessageDialog(null, "Unable to update Driver");
 
@@ -2404,7 +2407,8 @@ public class PoliceDB extends javax.swing.JFrame {
         Delete_Trip_Bus.DeleteTripOferringProccess(Integer.parseInt(trip), date, start);
         Select_MainSchedule.BusInformation();
         MainScheduleTableGrid();
-
+        Selecte_ActualTrip.ActualTripTableInformation();
+        ActualTripTableDisplay();
     }//GEN-LAST:event_Delete_ScheduleActionPerformed
 
 
@@ -2457,7 +2461,6 @@ public class PoliceDB extends javax.swing.JFrame {
             String arriveTime = Select_MainSchedule.busScheduleList.get(i).getArrivalTime();
             String driverName = Select_MainSchedule.busScheduleList.get(i).getDriver();
             String busId = Select_MainSchedule.busScheduleList.get(i).getBusID();
-            System.out.println(startTime);
             Object[] row = {trip, mainLocation, destination, day, 
                 startTime, arriveTime, driverName, busId};
             model.addRow(row);
@@ -2501,15 +2504,15 @@ public class PoliceDB extends javax.swing.JFrame {
         }
     }
     
-    public void UpdateWeeklySchedule(String DriverName){
+    public void UpdateWeeklySchedule(String DriverName, String DriverDate){
          DefaultTableModel model = (DefaultTableModel) WeeklyScheduleTable.getModel();
         // model.getDataVector().removeAllElements();
         model.setRowCount(0);
 
         for (int i = 0; i < Select_Driver.driverScheduleList.size(); i++) {
            String driver = Select_Driver.driverScheduleList.get(i).getDriver();
-           if(driver.equals(DriverName)){
            String date = Select_Driver.driverScheduleList.get(i).getDate();
+           if(driver.equals(DriverName) && date.equals(DriverDate) ){
             Object[] row = {driver, date};
             model.addRow(row);
            }
@@ -2527,7 +2530,7 @@ public class PoliceDB extends javax.swing.JFrame {
            String sequence = Select_Stop.stopScheduleList.get(i).getSequnceNumber();
            String drivingTime = Select_Stop.stopScheduleList.get(i).getDrivingTime();
 
-            Object[] row = {stopNumber, trip, sequence, drivingTime};
+            Object[] row = {trip, stopNumber, sequence, drivingTime};
             model.addRow(row);
         }
     }
@@ -2542,7 +2545,7 @@ public class PoliceDB extends javax.swing.JFrame {
            String sequence = Select_Stop.stopScheduleList.get(i).getSequnceNumber();
            String driving = Select_Stop.stopScheduleList.get(i).getDrivingTime();
            if(trip.equals(tripNumber) && stop.equals(StopNumber) && sequence.equals(SequnceNumber) && driving.equals(DrivingNumber)){
-            Object[] row = {stop, trip, sequence, driving};
+            Object[] row = {trip, stop, sequence, driving};
             model.addRow(row);
            }
            }

@@ -44,7 +44,6 @@ public class Select_Complete_BusTable {
                 busCompleteList.add(busInfo);
             }
             conn.close();
-            System.out.println("Connected");
 
         } catch (Exception e) {
             System.out.println(e);

@@ -42,7 +42,6 @@ public class Select_Complete_DriverTable {
                 driverCompleteList.add(driverInfo);
             }
             conn.close();
-            System.out.println("Connected");
 
         } catch (Exception e) {
             System.out.println(e);
