@@ -23,6 +23,7 @@ public class Delete_Trip_Bus {
     }
     public static void DeleteTripOferringProccess(int trip, String time, String start){
         DeleteActualTripTable(trip, time, start);
+        DeleteTripStopInfoTable(trip);
         DeleteTripOfferingTable(trip, time, start);
     }
     
@@ -140,6 +141,35 @@ public class Delete_Trip_Bus {
 
 
 
+            preparedStatement.executeUpdate();
+            rs = preparedStatement.getGeneratedKeys();
+            if (rs != null && rs.next()) {
+                System.out.println("Generated Emp Id: " + rs.getInt(1));
+            }
+
+            System.out.println("Completed Delete From Trip Offering");
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+     public static void DeleteTripStopInfoTable(int trip) {
+        try {
+            System.out.println("wait Insert");
+            ResultSet rs = null;
+            String driver = "com.mysql.jdbc.Driver";
+            String url = "jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_d024c4b29cf6214";
+            String username = "ba39d14a73da25";
+            String password = "f221ecf9";
+            Class.forName(driver);
+
+            Connection conn = DriverManager.getConnection(url, username, password);
+            String sql = "DELETE FROM tripstopinfo\n" +
+                    "WHERE TripNumber = ? ;";
+            
+            PreparedStatement preparedStatement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setInt(1, trip);
+      
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {

@@ -5,7 +5,6 @@
  */
 package examples;
 
-import static examples.SQLConnections.officersList;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
