@@ -59,7 +59,6 @@ public class Select_MainSchedule {
                 busScheduleList.add(busInformation);
             }
             conn.close();
-            System.out.println("Connected");
 
         } catch (Exception e) {
             System.out.println(e);

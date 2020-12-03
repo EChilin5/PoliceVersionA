@@ -53,7 +53,6 @@ public class Selecte_ActualTrip {
                 actualTripList.add(actualInfo);
             }
             conn.close();
-            System.out.println("Connected");
 
         } catch (Exception e) {
             System.out.println(e);

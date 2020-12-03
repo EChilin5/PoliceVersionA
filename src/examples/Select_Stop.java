@@ -48,6 +48,7 @@ public class Select_Stop {
                 StopSchedule stopInformation = new StopSchedule(Integer.toString(trip), Integer.toString(stop),
                         Integer.toString(sequence), Integer.toString(drivingTime));
                 stopScheduleList.add(stopInformation);
+              
             }
             conn.close();
             System.out.println("Connected");
