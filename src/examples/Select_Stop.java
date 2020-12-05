@@ -51,7 +51,7 @@ public class Select_Stop {
               
             }
             conn.close();
-            System.out.println("Connected");
+//            System.out.println("Connected");
 
         } catch (Exception e) {
             System.out.println(e);

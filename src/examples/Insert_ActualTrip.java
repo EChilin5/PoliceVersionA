@@ -22,9 +22,7 @@ public class Insert_ActualTrip {
         try {
             
             
-            
-            
-            System.out.println("wait Insert");
+            System.out.println("wait Insert to Actual Trip");
             ResultSet rs = null;
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_d024c4b29cf6214";
@@ -51,13 +49,12 @@ public class Insert_ActualTrip {
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {
-                System.out.println("Generated Emp Id: " + rs.getInt(1));
+              //  System.out.println("Generated Emp Id: " + rs.getInt(1));
             }
-
-            System.out.println("Completed Insert");
 
         } catch (Exception e) {
             System.out.println(e);
         }
+        System.out.print("Added Trip");
     }
 }

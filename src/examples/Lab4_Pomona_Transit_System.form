@@ -368,7 +368,7 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="109" max="32767" attributes="0"/>
+                      <EmptySpace pref="100" max="32767" attributes="0"/>
                       <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
@@ -424,8 +424,8 @@
                         <Column editable="false" title="Date" type="java.lang.Object"/>
                         <Column editable="false" title="Scheduled Start" type="java.lang.Object"/>
                         <Column editable="false" title="Scheduled Arrival" type="java.lang.Object"/>
-                        <Column editable="false" title="Driver ID" type="java.lang.Object"/>
-                        <Column editable="false" title="Bus Name" type="java.lang.Object"/>
+                        <Column editable="false" title="Driver Name" type="java.lang.Object"/>
+                        <Column editable="false" title="Bus ID" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -530,7 +530,7 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="Main_SearchSchedule" min="-2" max="-2" attributes="0"/>
+                          <Component id="Search_Schedule" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -556,7 +556,7 @@
                               <Component id="Search_Date" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Main_SearchSchedule" min="-2" max="-2" attributes="0"/>
+                          <Component id="Search_Schedule" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="12" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -602,12 +602,12 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Search_LocationActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="Main_SearchSchedule">
+                <Component class="javax.swing.JButton" name="Search_Schedule">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Search"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Main_SearchScheduleActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Search_ScheduleActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Search_Destination">
@@ -643,19 +643,11 @@
                                       <Component id="jLabel47" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel48" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="Add_Trip" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
-                                              <Component id="Add_startLocation" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                          <Component id="Add_Destination" min="-2" pref="110" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="Add_Trip" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
+                                      <Component id="Add_startLocation" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
+                                      <Component id="Add_Destination" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
@@ -679,7 +671,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="20" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -828,7 +820,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Lucida Grande" size="12" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="BusName"/>
+                    <Property name="text" type="java.lang.String" value="Bus ID"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Add_Bus">
@@ -848,7 +840,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Lucida Grande" size="12" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Driver Id"/>
+                    <Property name="text" type="java.lang.String" value="Driver Name"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Add_Driver">
@@ -1390,7 +1382,7 @@
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="4" rowCount="4">
                         <Column editable="false" title="Trip Number" type="java.lang.Object"/>
-                        <Column editable="false" title="Stop Address" type="java.lang.Object"/>
+                        <Column editable="false" title="Stop Number" type="java.lang.Object"/>
                         <Column editable="false" title="Sequence Number" type="java.lang.Object"/>
                         <Column editable="false" title="Driving Time" type="java.lang.Object"/>
                       </Table>

@@ -18,7 +18,7 @@ import java.sql.Statement;
 public class Insert_Bus {
     public static void InsertBusTable(int busId, String model, String year) {
         try {
-            System.out.println("wait Insert");
+            System.out.println("wait Insert Bus");
             ResultSet rs = null;
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_d024c4b29cf6214";
@@ -38,13 +38,14 @@ public class Insert_Bus {
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {
-                System.out.println("Generated Emp Id: " + rs.getInt(1));
+//                System.out.println("Generated Emp Id: " + rs.getInt(1));
             }
 
-            System.out.println("Completed Insert");
+//            System.out.println("Completed Insert");
 
         } catch (Exception e) {
             System.out.println(e);
         }
+        System.out.println("Added Bus is Complete");
     }
 }

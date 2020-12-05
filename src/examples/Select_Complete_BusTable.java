@@ -46,7 +46,7 @@ public class Select_Complete_BusTable {
             conn.close();
 
         } catch (Exception e) {
-            System.out.println(e);
+//            System.out.println(e);
         }
     }
 }
