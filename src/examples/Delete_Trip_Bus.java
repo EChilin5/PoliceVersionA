@@ -33,7 +33,6 @@ public class Delete_Trip_Bus {
     
     public static void changeTripOfferingeTable(int busId) {
         try {
-            System.out.println("wait Insert");
             ResultSet rs = null;
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_d024c4b29cf6214";
@@ -64,7 +63,6 @@ public class Delete_Trip_Bus {
     
     public static void DeleteBusTable(int busId) {
         try {
-            System.out.println("wait Insert");
             ResultSet rs = null;
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_d024c4b29cf6214";
@@ -92,7 +90,6 @@ public class Delete_Trip_Bus {
     }
      public static void DeleteActualTripTable(int trip, String time, String start) {
         try {
-            System.out.println("wait Insert");
             ResultSet rs = null;
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_d024c4b29cf6214";
@@ -117,7 +114,6 @@ public class Delete_Trip_Bus {
                 System.out.println("Generated Emp Id: " + rs.getInt(1));
             }
 
-            System.out.println("Completed Delete from actualTrip");
 
         } catch (Exception e) {
             System.out.println(e);
@@ -126,7 +122,6 @@ public class Delete_Trip_Bus {
     
      public static void DeleteTripOfferingTable(int trip, String time, String start) {
         try {
-            System.out.println("wait Insert");
             ResultSet rs = null;
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_d024c4b29cf6214";
@@ -159,7 +154,6 @@ public class Delete_Trip_Bus {
     }
      public static void DeleteTripStopInfoTable(int trip) {
         try {
-            System.out.println("wait Insert");
             ResultSet rs = null;
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_d024c4b29cf6214";

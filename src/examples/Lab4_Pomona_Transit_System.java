@@ -121,7 +121,7 @@ public class Lab4_Pomona_Transit_System extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         Search_Date = new javax.swing.JTextField();
         Search_Location = new javax.swing.JTextField();
-        Main_SearchSchedule = new javax.swing.JButton();
+        Search_Schedule = new javax.swing.JButton();
         Search_Destination = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
         jLabel45 = new javax.swing.JLabel();
@@ -470,7 +470,7 @@ public class Lab4_Pomona_Transit_System extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Trip", "Start Location", "Destination", "Date", "Scheduled Start", "Scheduled Arrival", "Driver ID", "Bus Name"
+                "Trip", "Start Location", "Destination", "Date", "Scheduled Start", "Scheduled Arrival", "Driver Name", "Bus ID"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -507,10 +507,10 @@ public class Lab4_Pomona_Transit_System extends javax.swing.JFrame {
             }
         });
 
-        Main_SearchSchedule.setText("Search");
-        Main_SearchSchedule.addActionListener(new java.awt.event.ActionListener() {
+        Search_Schedule.setText("Search");
+        Search_Schedule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Main_SearchScheduleActionPerformed(evt);
+                Search_ScheduleActionPerformed(evt);
             }
         });
 
@@ -541,7 +541,7 @@ public class Lab4_Pomona_Transit_System extends javax.swing.JFrame {
                 .addContainerGap(57, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Main_SearchSchedule)
+                .addComponent(Search_Schedule)
                 .addGap(117, 117, 117))
         );
         jPanel1Layout.setVerticalGroup(
@@ -562,7 +562,7 @@ public class Lab4_Pomona_Transit_System extends javax.swing.JFrame {
                     .addComponent(jLabel25)
                     .addComponent(Search_Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Main_SearchSchedule)
+                .addComponent(Search_Schedule)
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -601,13 +601,13 @@ public class Lab4_Pomona_Transit_System extends javax.swing.JFrame {
         jLabel50.setText("Start Time");
 
         jLabel51.setFont(new java.awt.Font("Lucida Grande", 0, 12)); // NOI18N
-        jLabel51.setText("BusName");
+        jLabel51.setText("Bus ID");
 
         jLabel52.setFont(new java.awt.Font("Lucida Grande", 0, 12)); // NOI18N
         jLabel52.setText("Arrival Time");
 
         jLabel53.setFont(new java.awt.Font("Lucida Grande", 0, 12)); // NOI18N
-        jLabel53.setText("Driver Id");
+        jLabel53.setText("Driver Name");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -654,7 +654,7 @@ public class Lab4_Pomona_Transit_System extends javax.swing.JFrame {
                                 .addComponent(jLabel51)
                                 .addGap(55, 55, 55)
                                 .addComponent(Add_Bus, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
@@ -1010,7 +1010,7 @@ public class Lab4_Pomona_Transit_System extends javax.swing.JFrame {
                         .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(461, 461, 461))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MakeCallLayout.createSequentialGroup()
-                .addContainerGap(109, Short.MAX_VALUE)
+                .addContainerGap(100, Short.MAX_VALUE)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1051,7 +1051,7 @@ public class Lab4_Pomona_Transit_System extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Trip Number", "Stop Address", "Sequence Number", "Driving Time"
+                "Trip Number", "Stop Number", "Sequence Number", "Driving Time"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2552,7 +2552,6 @@ public class Lab4_Pomona_Transit_System extends javax.swing.JFrame {
     private javax.swing.JTextField IncidentType;
     private javax.swing.JTextField Location;
     private javax.swing.JButton Main_Clear;
-    private javax.swing.JButton Main_SearchSchedule;
     private javax.swing.JPanel MakeCall;
     private javax.swing.JPanel Officer;
     private javax.swing.JPanel Operator;
@@ -2569,6 +2568,7 @@ public class Lab4_Pomona_Transit_System extends javax.swing.JFrame {
     private javax.swing.JTextField Search_Date;
     private javax.swing.JTextField Search_Destination;
     private javax.swing.JTextField Search_Location;
+    private javax.swing.JButton Search_Schedule;
     private javax.swing.JButton SendReport;
     private javax.swing.JButton StartAssigning;
     private javax.swing.JButton Stop_Clear;
