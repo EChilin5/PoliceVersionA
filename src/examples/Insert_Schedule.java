@@ -18,7 +18,7 @@ import java.sql.Statement;
 public class Insert_Schedule {
     public static void InsertTripTable(int tripNumber, String Location, String Destination) {
         try {
-            System.out.println("wait Insert");
+            System.out.println("wait Insert Trip");
             ResultSet rs = null;
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_d024c4b29cf6214";
@@ -38,19 +38,20 @@ public class Insert_Schedule {
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {
-                System.out.println("Generated Emp Id: " + rs.getInt(1));
+//                System.out.println("Generated Emp Id: " + rs.getInt(1));
             }
 
-            System.out.println("Completed Insert");
+//            System.out.println("Completed Insert");
 
         } catch (Exception e) {
             System.out.println(e);
         }
+        System.out.println("Completed adding trip");
     }
         public static void InsertTripOfferingTable( int TripNumber, String Date, 
                 String ScheduledStartTime, String ScheduledArrivalTime, String DriverName, int BusID) {
         try {
-            System.out.println("wait Insert");
+            System.out.println("wait Insert to Trip Offering");
             ResultSet rs = null;
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_d024c4b29cf6214";
@@ -76,13 +77,14 @@ public class Insert_Schedule {
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {
-                System.out.println("Generated Emp Id: " + rs.getInt(1));
+//                System.out.println("Generated Emp Id: " + rs.getInt(1));
             }
 
-            System.out.println("Completed Insert");
+//            System.out.println("Completed Insert");
 
         } catch (Exception e) {
             System.out.println(e);
         }
+        System.out.println("Complete adding Trip Offering");
     }
 }

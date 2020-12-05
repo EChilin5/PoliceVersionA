@@ -18,7 +18,7 @@ import java.sql.Statement;
 public class Insert_Driver {
     public static void InsertDriverTable(String DriverName, String phoneNumber) {
         try {
-            System.out.println("wait Insert");
+            System.out.println("wait Insert Driver");
             ResultSet rs = null;
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_d024c4b29cf6214";
@@ -37,13 +37,14 @@ public class Insert_Driver {
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {
-                System.out.println("Generated Emp Id: " + rs.getInt(1));
+//                System.out.println("Generated Emp Id: " + rs.getInt(1));
             }
 
-            System.out.println("Completed Insert");
+//            System.out.println("Completed Insert");
 
         } catch (Exception e) {
             System.out.println(e);
         }
+        System.out.println("Added Driver is Complete");
     }
 }

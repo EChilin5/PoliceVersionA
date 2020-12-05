@@ -18,13 +18,17 @@ import java.sql.Statement;
 public class Delete_Trip_Bus {
     
     public static void DeleteBusProccess(int busId){
+        System.out.println("Wait Deleting Bus");
         changeTripOfferingeTable(busId);
         DeleteBusTable(busId);
+        System.out.println("Deleteing Bus Complete");
     }
     public static void DeleteTripOferringProccess(int trip, String time, String start){
+        System.out.println("Wait Deleteing Trip");
         DeleteActualTripTable(trip, time, start);
         DeleteTripStopInfoTable(trip);
         DeleteTripOfferingTable(trip, time, start);
+        System.out.println("Deleting Trip Complete");
     }
     
     public static void changeTripOfferingeTable(int busId) {
@@ -47,10 +51,10 @@ public class Delete_Trip_Bus {
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {
-                System.out.println("Generated Emp Id: " + rs.getInt(1));
+//                System.out.println("Generated Emp Id: " + rs.getInt(1));
             }
 
-            System.out.println("Completed Update");
+//            System.out.println("Completed Update");
 
         } catch (Exception e) {
             System.out.println(e);
@@ -77,10 +81,10 @@ public class Delete_Trip_Bus {
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {
-                System.out.println("Generated Emp Id: " + rs.getInt(1));
+//                System.out.println("Generated Emp Id: " + rs.getInt(1));
             }
 
-            System.out.println("Completed Insert");
+//            System.out.println("Completed Insert");
 
         } catch (Exception e) {
             System.out.println(e);
@@ -144,10 +148,10 @@ public class Delete_Trip_Bus {
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {
-                System.out.println("Generated Emp Id: " + rs.getInt(1));
+//                System.out.println("Generated Emp Id: " + rs.getInt(1));
             }
 
-            System.out.println("Completed Delete From Trip Offering");
+//            System.out.println("Completed Delete From Trip Offering");
 
         } catch (Exception e) {
             System.out.println(e);
@@ -173,10 +177,10 @@ public class Delete_Trip_Bus {
             preparedStatement.executeUpdate();
             rs = preparedStatement.getGeneratedKeys();
             if (rs != null && rs.next()) {
-                System.out.println("Generated Emp Id: " + rs.getInt(1));
+//                System.out.println("Generated Emp Id: " + rs.getInt(1));
             }
 
-            System.out.println("Completed Delete From Trip Offering");
+//            System.out.println("Completed Delete From Trip Offering");
 
         } catch (Exception e) {
             System.out.println(e);

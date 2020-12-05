@@ -65,7 +65,7 @@ public class Update_Schedule {
             preparedStatement.setString(4, schedule);
             preparedStatement.executeUpdate();
              conn.close();
-            System.out.println("Completed Update");
+//            System.out.println("Completed Update");
 
         } catch (Exception e) {
             System.out.println(e);
